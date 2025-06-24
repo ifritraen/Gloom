@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_reset_zoom">Скинути масштаб</string>
+    <string name="action_view_raw">Переглянути оригінал</string>
+    <string name="action_view_markdown">Переглянути як Markdown</string>
+    <string name="msg_file_load_error">Не вдалося завантажити цей файл</string>
+    <string name="msg_raw_markdown_fail">Не вдалося завантажити вихідний код Markdown</string>
+</resources>

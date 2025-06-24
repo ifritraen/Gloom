@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_follow_user">Підписатися на %s</string>
+    <string name="action_unfollow_user">Відписатися від %s</string>
+    <string name="action_follow">Підписатися</string>
+    <string name="action_unfollow">Відписатися</string>
+    <string name="action_read_more">Читати далі</string>
+    <string name="badge_dev">Розробник Gloom</string>
+    <string name="badge_supporter">Прихильник Gloom</string>
+    <string name="section_title_contributions">Внески: %1$d</string>
+    <string name="section_title_pinned">Закріплено</string>
+    <string name="cd_link">Посилання</string>
+    <string name="label_follows_you">Підписаний(-на) на вас</string>
+    <string name="label_more">Більше</string>
+    <string name="label_less">Менше</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Root Tabs -->
+    <string name="navigation_explore">探索</string>
+    <string name="navigation_home">主頁</string>
+    <string name="navigation_inbox">收件匣</string>
+    <string name="navigation_profile">個人資料</string>
+    <string name="navigation_settings">設定</string>
+    <!--           -->
+    <!-- Generic Actions -->
+    <string name="action_back">返回</string>
+    <string name="action_confirm">確認</string>
+    <string name="action_share">分享</string>
+    <string name="action_expand">查看更多</string>
+    <string name="action_collapse">查看更少</string>
+    <string name="action_edit">編輯</string>
+    <string name="action_stop_edit">結束編輯</string>
+    <string name="action_try_again">再試一次</string>
+    <string name="action_copy">複製</string>
+    <!--                 -->
+    <!-- Dismiss Labels -->
+    <string name="dismiss_nevermind">算了</string>
+    <string name="dismiss_cancel">取消</string>
+    <string name="dismiss_no_thanks">不，謝謝</string>
+    <string name="dismiss_okay">Okay</string>
+    <!--                -->
+    <!-- Errors -->
+    <string name="error_release_load">無法載入發行版本</string>
+    <!--        -->
+    <!-- Titles -->
+    <string name="title_starred">已標星</string>
+    <string name="title_orgs">組織</string>
+    <string name="title_repos">儲存庫</string>
+    <string name="title_contributors">貢獻者</string>
+    <string name="title_sponsoring">贊助</string>
+    <string name="title_followers">關注者</string>
+    <string name="title_following">已關注</string>
+    <string name="title_forks">Forks</string>
+    <string name="title_commits">Commits</string>
+    <!--        -->
+    <!-- Entities -->
+    <string name="noun_repo">儲存庫</string>
+    <string name="noun_release">發行版</string>
+    <string name="noun_tag">标签</string>
+    <string name="noun_user">User</string>
+    <string name="noun_org">Organization</string>
+    <string name="noun_other">其它</string>
+    <string name="noun_commit">提交</string>
+    <string name="noun_license">許可協議</string>
+    <string name="noun_users_avatar">%s 的頭像</string>
+    <!--          -->
+    <!-- Issues and PRs -->
+    <string name="msg_issue_untitled">未命名問題</string>
+    <string name="msg_pr_untitled">未命名拉取請求</string>
+    <string name="label_checks">檢查</string>
+    <string name="label_reviews">評論</string>
+    <!--                -->
+    <string name="label_dont_show_again">不再顯示</string>
+    <!-- Units -->
+    <string name="time_now">現在</string>
+    <string name="time_since_second">%1$d秒</string>
+    <string name="time_since_minute">%1$d分鐘</string>
+    <string name="time_since_hour">%1$d小時</string>
+    <string name="time_since_day">%1$d 日</string>
+    <string name="time_since_month">%1$d 月</string>
+    <string name="time_since_year">%1$d 年</string>
+    <string name="file_size_bytes">%1$d B</string>
+    <string name="file_size_kilobytes">%1$d KB</string>
+    <string name="file_size_megabytes">%1$d MB</string>
+    <string name="file_size_gigabytes">%1$d GB</string>
+    <!--       -->
+    <!-- Downloading -->
+    <string name="action_download">下載</string>
+    <string name="title_download_confirm">確認下載</string>
+    <string name="msg_download_dialog_body">您即將下載 %1$s（%2$s），確定要執行此操作嗎？</string>
+    <string name="msg_downloading_file">正在下載 %1$s...</string>
+    <string name="msg_download_completed">下載已完成</string>
+    <!--             -->
+    <!-- Installing -->
+    <string name="install_fail_generic">安裝失敗：未知原因</string>
+    <string name="install_fail_blocked">安裝已被阻止</string>
+    <string name="install_fail_invalid">一個或多個 apk 損壞或無效</string>
+    <string name="install_fail_conflict">與現有應用程式衝突，通常是由於簽名不匹配所致</string>
+    <string name="install_fail_storage">您沒有足夠的儲存空間來安裝</string>
+    <string name="install_fail_incompatible">此應用程式與您的裝置不相容</string>
+    <string name="install_fail_timeout">安裝超時</string>
+    <string name="install_success">成功安裝應用程式！</string>
+    <string name="install_cancelled">安裝已取消</string>
+    <!--            -->
+</resources>

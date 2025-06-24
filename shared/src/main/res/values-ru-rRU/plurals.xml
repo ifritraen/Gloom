@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="noun_contributors">
+        <item quantity="one">%s Участник</item>
+        <item quantity="few">%s Участника</item>
+        <item quantity="many">%s Участников</item>
+        <item quantity="other">%s Участника</item>
+    </plurals>
+    <plurals name="repositories">
+        <item quantity="one">%s Репозиторий</item>
+        <item quantity="few">%s Репозитория</item>
+        <item quantity="many">%s Репозиториев</item>
+        <item quantity="other">%s Репозитория</item>
+    </plurals>
+    <plurals name="stars">
+        <item quantity="one">%s Звезда</item>
+        <item quantity="few">%s Звезды</item>
+        <item quantity="many">%s Звезд</item>
+        <item quantity="other">%s Звезд</item>
+    </plurals>
+    <plurals name="forks">
+        <item quantity="one">%s Форк</item>
+        <item quantity="few">%s Форка</item>
+        <item quantity="many">%s Форков</item>
+        <item quantity="other">%s Форк(ов)</item>
+    </plurals>
+    <plurals name="followers">
+        <item quantity="one">%s Подписчик</item>
+        <item quantity="few">%s Подписчика</item>
+        <item quantity="many">%s Подписчиков</item>
+        <item quantity="other">%s Подписчиков</item>
+    </plurals>
+    <plurals name="following">
+        <item quantity="one">%s Подписан</item>
+        <item quantity="few">%s Подписано</item>
+        <item quantity="many">%s Подписано</item>
+        <item quantity="other">%s Подписано</item>
+    </plurals>
+    <plurals name="contributions_toast">
+        <item quantity="one">%1$s: %2$d Участник</item>
+        <item quantity="few">%1$s: %2$d Участника</item>
+        <item quantity="many">%1$s: %2$d Участников</item>
+        <item quantity="other">%1$s: %2$d Участника</item>
+    </plurals>
+    <plurals name="plural_language">
+        <item quantity="one">Язык</item>
+        <item quantity="few">Языка</item>
+        <item quantity="many">Языков</item>
+        <item quantity="other">Языка</item>
+    </plurals>
+    <plurals name="plural_lines_selected">
+        <item quantity="one">Строка %1$s</item>
+        <item quantity="few">Lines %1$s-%2$s</item>
+        <item quantity="many">Строки %1$s-%2$s</item>
+        <item quantity="other">Lines %1$s-%2$s</item>
+    </plurals>
+    <plurals name="plural_pr_merge_details">
+        <item quantity="one">%1$s merged %2$d commit into %3$s</item>
+        <item quantity="few">%1$s merged %2$d commits into %3$s</item>
+        <item quantity="many">%1$s merged %2$d commits into %3$s</item>
+        <item quantity="other">%1$s merged %2$d commits into %3$s</item>
+    </plurals>
+</resources>

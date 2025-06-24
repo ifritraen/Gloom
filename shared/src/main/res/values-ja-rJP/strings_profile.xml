@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_follow_user">%s をフォロー</string>
+    <string name="action_unfollow_user">%s をフォロー解除</string>
+    <string name="action_follow">フォロー</string>
+    <string name="action_unfollow">フォロー解除</string>
+    <string name="action_read_more">続きを読む</string>
+    <string name="badge_dev">Gloom 開発者</string>
+    <string name="badge_supporter">Gloom サポーター</string>
+    <string name="section_title_contributions">コントリビューション: %1$d</string>
+    <string name="section_title_pinned">ピン留め</string>
+    <string name="cd_link">リンク</string>
+    <string name="label_follows_you">フォローされています</string>
+    <string name="label_more">多い</string>
+    <string name="label_less">少ない</string>
+</resources>

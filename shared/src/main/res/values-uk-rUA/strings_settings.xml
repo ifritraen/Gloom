@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_sign_out">Вийти</string>
+    <string name="settings_sign_out_header">Вийти?</string>
+    <string name="settings_sign_out_text">Ви впевнені, що хочете вийти? Ви завжди зможете увійти знову.</string>
+    <!-- Appearance -->
+    <string name="settings_appearance">Зовнішній вигляд</string>
+    <string name="settings_appearance_description">Тема, стиль коду</string>
+    <string name="appearance_theme">Тема</string>
+    <string name="appearance_monet">Динамічна тема</string>
+    <string name="appearance_monet_description">Доступно на Android 12+</string>
+    <string name="theme_system">Системна</string>
+    <string name="theme_light">Світла</string>
+    <string name="theme_dark">Темна</string>
+    <string name="appearance_av_shape">Форма аватару</string>
+    <string name="appearance_av_radius">Радіус:</string>
+    <string name="appearance_av_radius_percent">%1$d%</string>
+    <string name="appearance_av_shape_circle">Коло</string>
+    <string name="appearance_av_shape_roundrect">Заокруглений квадрат</string>
+    <string name="appearance_av_shape_squircle">Округлий квадрат</string>
+    <string name="action_expand_av_shape">Переглянути варіанти форми аватара</string>
+    <string name="action_collapse_av_shape">Закрити варіанти форми аватара</string>
+    <!--            -->
+    <!-- App Icons -->
+    <string name="settings_app_icon">Іконка програми</string>
+    <string name="settings_app_icon_description">Оберіть іконку для Gloom</string>
+    <string name="app_icon_collection_classic">Класичний</string>
+    <string name="app_icon_main">Стандартний</string>
+    <string name="app_icon_main_description">Стандартна іконка Gloom.</string>
+    <string name="app_icon_sky">Небо</string>
+    <string name="app_icon_sky_description">Хм... Яка цікава хмаринка...</string>
+    <string name="app_icon_light">Світла</string>
+    <string name="app_icon_light_description">Оригінальна, але світла.</string>
+    <string name="app_icon_collection_stylized">Стилізована</string>
+    <string name="app_icon_blueprint">Креслення</string>
+    <string name="app_icon_blueprint_description">Створюємо щось неймовірне!</string>
+    <string name="app_icon_collection_pride">Pride</string>
+    <string name="app_icon_pride">ЛГБТ</string>
+    <string name="app_icon_pride_description">🏳️‍🌈</string>
+    <string name="app_icon_trans">Транс</string>
+    <string name="app_icon_trans_description">🏳️‍⚧️</string>
+    <string name="app_icon_trans_inverted">Інвертований транс</string>
+    <string name="app_icon_trans_inverted_description">🏳️‍⚧️, але навпаки</string>
+    <string name="app_icon_collection_catppuccin">Catppuccin</string>
+    <string name="app_icon_mocha">Mocha</string>
+    <string name="app_icon_mocha_description">Щось насичене для початку дня!</string>
+    <string name="app_icon_macchiato">Macchiato</string>
+    <string name="app_icon_macchiato_description">Може, щось світліше?</string>
+    <string name="app_icon_frappe">Frappé</string>
+    <string name="app_icon_frappe_description">Надворі спекотно, еге ж?</string>
+    <string name="app_icon_latte">Latte</string>
+    <string name="app_icon_latte_description">Вам з мигдальним чи соєвим молоком?</string>
+    <string name="app_icon_collection_holiday25">Свята 2025</string>
+    <string name="app_icon_valentines25">День закоханих</string>
+    <string name="app_icon_valentines25_description">Любов у повітрі?</string>
+    <!--           -->
+    <!-- Accounts -->
+    <string name="settings_accounts">Акаунти</string>
+    <string name="settings_accounts_description">Додати або змінити акаунт</string>
+    <string name="action_add_account">Додати акаунт</string>
+    <string name="action_sign_out_all">Вийти з усіх акаунтів</string>
+    <string name="cd_enterprise_domain">Корпоративний домен: %1$s</string>
+    <!--          -->
+    <!-- Development -->
+    <string name="settings_development">Розробка</string>
+    <string name="settings_development_description">Налагодження та тестування нових функцій</string>
+    <string name="dev_alert_testing">Тестування сповіщення</string>
+    <string name="dev_alert_testing_description">Створення власних сповіщень для тестування</string>
+    <string name="dev_alert_title">Заголовок</string>
+    <string name="dev_alert_message">Повідомлення</string>
+    <string name="dev_alert_show_icon">Показати іконку</string>
+    <string name="dev_alert_duration">Тривалість</string>
+    <string name="dev_alert_action_show_alert">Показувати сповіщення</string>
+    <string name="dev_alert_action_fill_queue">Заповнити чергу</string>
+    <!--             -->
+    <!-- About -->
+    <string name="settings_about">Про застосунок</string>
+    <string name="settings_libraries">Бібліотеки</string>
+    <string name="settings_libraries_description">Бібліотеки, використані для створення Gloom</string>
+    <string name="cd_library_author">Автор: %1$s</string>
+    <string name="cd_library_license">Ліцензія: %1$s</string>
+    <string name="label_open_source">Відкритий код</string>
+    <string name="label_closed_source">Закритий код</string>
+    <!--       -->
+</resources>

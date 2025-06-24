@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="title_trending">热门</string>
+    <string name="label_trending_daily">今日</string>
+    <string name="label_trending_weekly">本周</string>
+    <string name="label_trending_monthly">本月</string>
+    <string name="label_stars_day">今日 %1$s 星标</string>
+    <string name="label_stars_week">本周 %1$s 星标</string>
+    <string name="label_stars_month">本月 %1$s 星标</string>
+    <string name="msg_trending_footer_title">到底了！</string>
+    <string name="msg_trending_footer_description">稍后再来查看新的热门仓库</string>
+</resources>

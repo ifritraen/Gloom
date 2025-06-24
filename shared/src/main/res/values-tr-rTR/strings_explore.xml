@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="title_trending">Trendler</string>
+    <string name="label_trending_daily">Bugün</string>
+    <string name="label_trending_weekly">Bu hafta</string>
+    <string name="label_trending_monthly">Bu ay</string>
+    <string name="label_stars_day">Bugün %1$s</string>
+    <string name="label_stars_week">Bu hafta %1$s</string>
+    <string name="label_stars_month">Bu ay %1$s</string>
+    <string name="msg_trending_footer_title">Sona ulaştınız!</string>
+    <string name="msg_trending_footer_description">Yeni trend depoları bulmak için daha sonra tekrar kontrol edin</string>
+</resources>

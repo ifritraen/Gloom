@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_follow_user">Följ %s</string>
+    <string name="action_unfollow_user">Avfölj %s</string>
+    <string name="action_follow">Följ</string>
+    <string name="action_unfollow">Avfölj</string>
+    <string name="action_read_more">Läs mer</string>
+    <string name="badge_dev">Gloom Developer</string>
+    <string name="badge_supporter">Gloom Supporter</string>
+    <string name="section_title_contributions">Contributions: %1$d</string>
+    <string name="section_title_pinned">Pinned</string>
+    <string name="cd_link">Länk</string>
+    <string name="label_follows_you">Följer dig</string>
+    <string name="label_more">Mer</string>
+    <string name="label_less">Mindre</string>
+</resources>

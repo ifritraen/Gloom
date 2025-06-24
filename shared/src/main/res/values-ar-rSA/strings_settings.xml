@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_sign_out">تسجيل الخروج</string>
+    <string name="settings_sign_out_header">تسجيل الخروج؟</string>
+    <string name="settings_sign_out_text">هل أنت متيقِّن من أنك تريد تسجيل الخروج؟ يمكنك دائماً تسجيل الدخول لاحقاً.    </string>
+    <!-- Appearance -->
+    <string name="settings_appearance">المظهر</string>
+    <string name="settings_appearance_description">ثيم، نمط الكود</string>
+    <string name="appearance_theme">الثيم</string>
+    <string name="appearance_monet">ثيم ديناميكي</string>
+    <string name="appearance_monet_description">متوفر على أندرويد 12+</string>
+    <string name="theme_system">النظام</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="appearance_av_shape">Avatar Shape</string>
+    <string name="appearance_av_radius">نصف القطر:</string>
+    <string name="appearance_av_radius_percent">%1$d%</string>
+    <string name="appearance_av_shape_circle">دائري</string>
+    <string name="appearance_av_shape_roundrect">مربع دائري</string>
+    <string name="appearance_av_shape_squircle">مربع دائري</string>
+    <string name="action_expand_av_shape">View avatar shape options</string>
+    <string name="action_collapse_av_shape">Close avatar shape options</string>
+    <!--            -->
+    <!-- App Icons -->
+    <string name="settings_app_icon">App Icon</string>
+    <string name="settings_app_icon_description">Pick an icon for Gloom</string>
+    <string name="app_icon_collection_classic">Classic</string>
+    <string name="app_icon_main">Default</string>
+    <string name="app_icon_main_description">The default Gloom icon.</string>
+    <string name="app_icon_sky">Sky</string>
+    <string name="app_icon_sky_description">Huh... That\'s an interesting cloud...</string>
+    <string name="app_icon_light">Light</string>
+    <string name="app_icon_light_description">The original, but light.</string>
+    <string name="app_icon_collection_stylized">Stylized</string>
+    <string name="app_icon_blueprint">Blueprint</string>
+    <string name="app_icon_blueprint_description">Building something great!</string>
+    <string name="app_icon_collection_pride">Pride</string>
+    <string name="app_icon_pride">LGBT</string>
+    <string name="app_icon_pride_description">🏳️‍🌈</string>
+    <string name="app_icon_trans">Trans</string>
+    <string name="app_icon_trans_description">🏳️‍⚧️</string>
+    <string name="app_icon_trans_inverted">Trans Inverted</string>
+    <string name="app_icon_trans_inverted_description">🏳️‍⚧️ but swapped</string>
+    <string name="app_icon_collection_catppuccin">Catppuccin</string>
+    <string name="app_icon_mocha">Mocha</string>
+    <string name="app_icon_mocha_description">Something rich to start your day!</string>
+    <string name="app_icon_macchiato">Macchiato</string>
+    <string name="app_icon_macchiato_description">Prefer something a little lighter?</string>
+    <string name="app_icon_frappe">Frappé</string>
+    <string name="app_icon_frappe_description">Must be hot out, huh?</string>
+    <string name="app_icon_latte">Latte</string>
+    <string name="app_icon_latte_description">Would you prefer almond or soy?</string>
+    <string name="app_icon_collection_holiday25">Holidays 2025</string>
+    <string name="app_icon_valentines25">Valentines</string>
+    <string name="app_icon_valentines25_description">Love is in the air?</string>
+    <!--           -->
+    <!-- Accounts -->
+    <string name="settings_accounts">حِسابات</string>
+    <string name="settings_accounts_description">إضافة أو تبديل الحسابات</string>
+    <string name="action_add_account">إضافة حساب</string>
+    <string name="action_sign_out_all">تسجيل الخروج من كافة الحسابات</string>
+    <string name="cd_enterprise_domain">نطاق المؤسسة: %1$s</string>
+    <!--          -->
+    <!-- Development -->
+    <string name="settings_development">التّطوير</string>
+    <string name="settings_development_description">تصحيح واختبار الميزات الجديدة</string>
+    <string name="dev_alert_testing">اختبار التنبيهات</string>
+    <string name="dev_alert_testing_description">إنشاء تنبيهات مخصصة لاستخدامها في الاختبار</string>
+    <string name="dev_alert_title">العنوان</string>
+    <string name="dev_alert_message">رسالة</string>
+    <string name="dev_alert_show_icon">إظهار أيقونة</string>
+    <string name="dev_alert_duration">المدة</string>
+    <string name="dev_alert_action_show_alert">إظهار التنبيهات</string>
+    <string name="dev_alert_action_fill_queue">ملء قائمة الانتظار</string>
+    <!--             -->
+    <!-- About -->
+    <string name="settings_about">حول</string>
+    <string name="settings_libraries">المكتبات</string>
+    <string name="settings_libraries_description">المكتبات المستخدمة لصنع Gloom</string>
+    <string name="cd_library_author">المؤلف: %1$s</string>
+    <string name="cd_library_license">الترخيص: %1$s</string>
+    <string name="label_open_source">مفتوح المصدر</string>
+    <string name="label_closed_source">مصدر مغلق</string>
+    <!--       -->
+</resources>

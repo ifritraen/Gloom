@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_github_sign_in">Logga in med GitHub</string>
+    <string name="label_choose_account">Välj ett konto</string>
+    <string name="label_or">eller</string>
+    <string name="msg_welcome">Välkommen!</string>
+</resources>

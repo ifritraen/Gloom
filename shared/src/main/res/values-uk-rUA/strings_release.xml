@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="title_install_app">Встановити цю програму?</string>
+    <string name="msg_release_author">§автор§%1$s§ випустив це %2$s</string>
+    <string name="msg_install_dialog_body">Ми виявили, що %1$s — це програма для Android. Бажаєте її встановити?</string>
+    <string name="action_install">Встановити</string>
+    <string name="label_latest">Останній</string>
+    <string name="label_prerelease">Пре-реліз</string>
+</resources>

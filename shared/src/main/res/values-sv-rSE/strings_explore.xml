@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="title_trending">Trending</string>
+    <string name="label_trending_daily">Idag</string>
+    <string name="label_trending_weekly">Denna vecka</string>
+    <string name="label_trending_monthly">Denna månad</string>
+    <string name="label_stars_day">%1$s idag</string>
+    <string name="label_stars_week">%1$s denna vecka</string>
+    <string name="label_stars_month">%1$s denna månad</string>
+    <string name="msg_trending_footer_title">Du har nått slutet!</string>
+    <string name="msg_trending_footer_description">Check back later to find new trending repositories</string>
+</resources>
