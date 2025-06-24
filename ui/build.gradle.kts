@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.compose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.aboutlibraries)
 }
 
@@ -20,53 +20,39 @@ android {
 }
 
 kotlin {
-    applyDefaultHierarchyTemplate()
-
-    androidTarget()
-    jvm("desktop")
-
     jvmToolchain(17)
 
     compilerOptions {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
+}
 
-    sourceSets {
-        commonMain {
-            dependencies {
-                implementation(project(":api"))
-                implementation(project(":shared"))
+dependencies {
+    implementation(project(":shared"))
+    implementation(project(":api"))
 
-                implementation(libs.bundles.kotlinx)
-                implementation(libs.bundles.voyager)
+    implementation(libs.bundles.kotlinx)
+    implementation(libs.bundles.voyager)
 
-                api(compose.material3)
-                implementation(compose.materialIconsExtended)
-                implementation(compose.runtime)
+    api(compose.material3)
+    implementation(compose.materialIconsExtended)
+    implementation(compose.runtime)
 
-                implementation(libs.coil.compose)
-                implementation(libs.coil.network.ktor3)
-                implementation(libs.compose.pdf)
-                implementation(libs.compose.webview.multiplatform)
-                implementation(libs.highlights)
-                implementation(libs.koin.core)
-                implementation(libs.koin.compose)
-                implementation(libs.ktor.client.core)
-                implementation(libs.multiplatform.paging)
-                implementation(libs.multiplatform.paging.compose)
-                implementation(libs.zoomable)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.gif)
+    implementation(libs.coil.network.ktor3)
+    implementation(libs.compose.pdf)
+    implementation(libs.compose.webview.multiplatform)
+    implementation(libs.highlights)
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
+    implementation(libs.ktor.client.core)
+    implementation(libs.multiplatform.paging)
+    implementation(libs.multiplatform.paging.compose)
+    implementation(libs.zoomable)
 
-                // Needed for shared module resources to work
-                implementation(libs.moko.resources.compose)
-            }
-        }
-
-        androidMain {
-            dependencies {
-                implementation(libs.androidx.core.ktx)
-                implementation(libs.coil.gif)
-                implementation(libs.koin.android)
-            }
-        }
-    }
+    // Needed for shared module resources to work
+    implementation(libs.moko.resources.compose)
 }
