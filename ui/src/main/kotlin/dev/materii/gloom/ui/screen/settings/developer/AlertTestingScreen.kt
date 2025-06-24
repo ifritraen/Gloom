@@ -12,10 +12,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.settings.component.SettingsButton
 import dev.materii.gloom.ui.screen.settings.component.SettingsGroup
@@ -65,7 +65,7 @@ class AlertTestingScreen: Screen {
                             title = it
                         },
                         label = {
-                            Text(stringResource(Res.strings.dev_alert_title))
+                            Text(stringResource(R.string.dev_alert_title))
                         },
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -80,7 +80,7 @@ class AlertTestingScreen: Screen {
                             message = it
                         },
                         label = {
-                            Text(stringResource(Res.strings.dev_alert_message))
+                            Text(stringResource(R.string.dev_alert_message))
                         },
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -90,13 +90,13 @@ class AlertTestingScreen: Screen {
                     modifier = Modifier.padding(horizontal = 16.dp)
                 ) {
                     SettingsSwitch(
-                        label = stringResource(Res.strings.dev_alert_show_icon),
+                        label = stringResource(R.string.dev_alert_show_icon),
                         pref = showIcon,
                         onPrefChange = { showIcon = it }
                     )
 
                     SettingsItemChoice(
-                        label = stringResource(Res.strings.dev_alert_duration),
+                        label = stringResource(R.string.dev_alert_duration),
                         pref = duration,
                         onPrefChange = { duration = it }
                     )
@@ -109,7 +109,7 @@ class AlertTestingScreen: Screen {
                 }
 
                 SettingsButton(
-                    label = stringResource(Res.strings.dev_alert_action_show_alert),
+                    label = stringResource(R.string.dev_alert_action_show_alert),
                     onClick = {
                         alertController.showAlert(
                             title = title.ifBlank { null },
@@ -122,10 +122,10 @@ class AlertTestingScreen: Screen {
                 )
 
                 SettingsButton(
-                    label = stringResource(Res.strings.dev_alert_action_fill_queue),
+                    label = stringResource(R.string.dev_alert_action_fill_queue),
                     outlined = true,
                     onClick = {
-                        for (i in 1..10) {
+                        repeat(10) {
                             alertController.showAlert(
                                 title = title.ifBlank { null },
                                 message = message.ifBlank { null },
@@ -146,7 +146,7 @@ class AlertTestingScreen: Screen {
         scrollBehavior: TopAppBarScrollBehavior
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.dev_alert_testing),
+            title = stringResource(R.string.dev_alert_testing),
             scrollBehavior = scrollBehavior
         )
     }

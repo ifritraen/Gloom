@@ -16,9 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
 import dev.materii.gloom.gql.type.StatusState
 
 @Composable
@@ -70,14 +70,13 @@ fun Label(
                 modifier = Modifier.size(12.dp)
             )
         }
-        text?.let {
-            Text(
-                text = text,
-                style = MaterialTheme.typography.labelSmall,
-                fontSize = 10.sp,
-                color = textColor,
-                maxLines = 1
-            )
-        }
+
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelSmall,
+            fontSize = 10.sp,
+            color = textColor,
+            maxLines = 1
+        )
     }
 }

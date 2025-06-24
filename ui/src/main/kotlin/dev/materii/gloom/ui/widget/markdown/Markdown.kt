@@ -1,15 +1,16 @@
 package dev.materii.gloom.ui.widget.markdown
 
+import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.compose.foundation.background
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.platform.LocalContext
 import com.apollographql.apollo.api.http.internal.urlEncode
 import com.benasher44.uuid.uuid4
 import com.multiplatform.webview.jsbridge.rememberWebViewJsBridge
@@ -17,8 +18,6 @@ import com.multiplatform.webview.web.NativeWebView
 import com.multiplatform.webview.web.WebView
 import com.multiplatform.webview.web.rememberWebViewNavigator
 import com.multiplatform.webview.web.rememberWebViewStateWithHTMLData
-import dev.icerock.moko.resources.compose.readTextAsState
-import dev.materii.gloom.Res
 import dev.materii.gloom.ui.theme.CodeTheme
 import dev.materii.gloom.ui.theme.gloomColorScheme
 import dev.materii.gloom.ui.util.markdown.MarkdownJSMessageHandler
@@ -40,10 +39,12 @@ private val PrefersDarkRx = "prefers-color-scheme:\\s*dark".toRegex(RegexOption.
  * @param modifier The [Modifier] used to style this [Markdown] component
  */
 @Composable
+@SuppressLint("SetJavaScriptEnabled")
 fun Markdown(
     html: String,
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
     val linkHandler = LocalLinkHandler.current
 
     val messageHandler = MarkdownJSMessageHandler()
@@ -72,8 +73,10 @@ fun Markdown(
     }
 
     val template = MarkdownTemplate.ifBlank {
-        val file by Res.assets.markdown.template_html.readTextAsState()
-        MarkdownTemplate = file ?: ""; MarkdownTemplate
+        val file = context.assets.open("markdown/template.html")
+        val template = String(file.readBytes())
+        MarkdownTemplate = template
+        MarkdownTemplate
     }
 
     val colorScheme = MaterialTheme.colorScheme

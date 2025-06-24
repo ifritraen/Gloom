@@ -8,8 +8,8 @@ import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import androidx.compose.ui.res.stringResource
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.EnumRadioController
 
 @Composable
@@ -45,7 +45,7 @@ inline fun <reified E: Enum<E>> SettingsChoiceDialog(
             },
             confirmButton = {
                 FilledTonalButton(onClick = { onChoice(choice) }) {
-                    Text(text = stringResource(Res.strings.action_confirm))
+                    Text(text = stringResource(R.string.action_confirm))
                 }
             }
         )

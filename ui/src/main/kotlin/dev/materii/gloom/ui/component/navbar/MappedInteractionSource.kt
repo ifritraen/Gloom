@@ -31,7 +31,7 @@ class MappedInteractionSource(
 
     override val interactions = underlyingInteractionSource.interactions.map { interaction ->
         when (interaction) {
-            is PressInteraction.Press  -> {
+            is PressInteraction.Press -> {
                 val mappedPress = mapPress(interaction)
                 mappedPresses[interaction] = mappedPress
                 mappedPress
@@ -55,7 +55,7 @@ class MappedInteractionSource(
                 }
             }
 
-            else                       -> interaction
+            else -> interaction
         }
     }
 

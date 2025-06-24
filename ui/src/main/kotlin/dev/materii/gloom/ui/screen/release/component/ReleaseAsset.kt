@@ -14,13 +14,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.DialogManager
 import dev.materii.gloom.domain.manager.DialogState
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.icon.Custom
 import dev.materii.gloom.ui.icon.custom.IOS
 import dev.materii.gloom.ui.screen.release.dialog.ReleaseAssetDownloadDialog
@@ -127,7 +127,7 @@ fun ReleaseAsset(
         ) {
             Icon(
                 imageVector = Icons.Filled.Download,
-                contentDescription = stringResource(Res.strings.action_download)
+                contentDescription = stringResource(R.string.action_download)
             )
         }
     }

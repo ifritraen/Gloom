@@ -13,7 +13,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.util.annotatingStringResource
 import dev.materii.gloom.util.format
@@ -38,7 +38,7 @@ fun ReleaseAuthor(
 
         Text(
             text = annotatingStringResource(
-                Res.strings.msg_release_author,
+                R.string.msg_release_author,
                 login,
                 timestamp.format()
             ) {

@@ -12,11 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.icon.Custom
 import dev.materii.gloom.ui.icon.custom.Commit
 
@@ -43,7 +43,7 @@ fun ReleaseInfo(
         ) {
             Icon(
                 imageVector = Icons.Outlined.LocalOffer,
-                contentDescription = stringResource(Res.strings.noun_tag),
+                contentDescription = stringResource(R.string.noun_tag),
                 modifier = Modifier.size(20.dp)
             )
 
@@ -67,7 +67,7 @@ fun ReleaseInfo(
             ) {
                 Icon(
                     imageVector = Icons.Custom.Commit,
-                    contentDescription = stringResource(Res.strings.noun_commit),
+                    contentDescription = stringResource(R.string.noun_commit),
                     modifier = Modifier.size(20.dp)
                 )
 

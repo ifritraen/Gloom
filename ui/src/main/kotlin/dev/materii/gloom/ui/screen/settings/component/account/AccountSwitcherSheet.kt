@@ -12,11 +12,11 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.bottomsheet.BottomSheet
 import dev.materii.gloom.ui.component.bottomsheet.BottomSheetLayout
 import dev.materii.gloom.ui.screen.auth.LandingScreen
@@ -49,7 +49,7 @@ fun AccountSwitcherSheet(
         modifier = modifier
     ) {
         BottomSheetLayout(
-            title = { Text(stringResource(Res.strings.settings_accounts)) },
+            title = { Text(stringResource(R.string.settings_accounts)) },
             padding = PaddingValues(0.dp)
         ) {
             LazyColumn(
@@ -82,7 +82,7 @@ fun AccountSwitcherSheet(
                     key = "Add account"
                 ) {
                     SettingsButton(
-                        label = stringResource(Res.strings.action_add_account),
+                        label = stringResource(R.string.action_add_account),
                         onClick = {
                             animateToDismiss()
                             nav.navigate(LandingScreen(showAccountCard = false))

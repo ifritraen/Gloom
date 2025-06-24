@@ -9,11 +9,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.res.stringResource
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 
 class NotificationsScreen: Tab {
 
@@ -23,7 +23,7 @@ class NotificationsScreen: Tab {
             val selected = navigator.current == this
             return TabOptions(
                 0u,
-                stringResource(Res.strings.navigation_inbox),
+                stringResource(R.string.navigation_inbox),
                 rememberVectorPainter(if (selected) Icons.Filled.Notifications else Icons.Outlined.Notifications)
             )
         }

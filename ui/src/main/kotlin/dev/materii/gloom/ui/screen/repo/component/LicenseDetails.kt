@@ -13,12 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.RepoLicense
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.theme.gloomColorScheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
@@ -59,7 +59,7 @@ fun LicenseDetails(
                 ) {
                     if (license.permissions.isNotEmpty()) {
                         ConditionGroup(
-                            label = stringResource(Res.strings.label_permissions),
+                            label = stringResource(R.string.label_permissions),
                             conditions = license.permissions.mapNotNull { it?.label }.toImmutableList(),
                             icon = Icons.Outlined.Check,
                             iconColor = MaterialTheme.gloomColorScheme.statusGreen
@@ -68,7 +68,7 @@ fun LicenseDetails(
 
                     if (license.limitations.isNotEmpty()) {
                         ConditionGroup(
-                            label = stringResource(Res.strings.label_limitations),
+                            label = stringResource(R.string.label_limitations),
                             conditions = license.limitations.mapNotNull { it?.label }.toImmutableList(),
                             icon = Icons.Outlined.Close,
                             iconColor = MaterialTheme.gloomColorScheme.statusRed
@@ -77,7 +77,7 @@ fun LicenseDetails(
 
                     if (license.conditions.isNotEmpty()) {
                         ConditionGroup(
-                            label = stringResource(Res.strings.label_conditions),
+                            label = stringResource(R.string.label_conditions),
                             conditions = license.conditions.mapNotNull { it?.label }.toImmutableList(),
                             icon = Icons.Outlined.Info,
                             iconColor = MaterialTheme.colorScheme.secondary
@@ -94,7 +94,7 @@ fun LicenseDetails(
                     .clickable(
                         role = Role.Button,
                         onClickLabel = stringResource(
-                            if (detailsExpanded) Res.strings.action_hide_license_details else Res.strings.action_show_license_details
+                            if (detailsExpanded) R.string.action_hide_license_details else R.string.action_show_license_details
                         )
                     ) {
                         detailsExpanded = !detailsExpanded

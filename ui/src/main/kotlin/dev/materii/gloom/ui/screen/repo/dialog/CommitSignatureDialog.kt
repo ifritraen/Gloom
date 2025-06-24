@@ -8,12 +8,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.CommitSignatureDetails
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.util.format
 
@@ -28,7 +28,7 @@ fun CommitSignatureDialog(
             Icon(Icons.Outlined.Verified, null)
         },
         title = {
-            Text(stringResource(Res.strings.title_commit_verified))
+            Text(stringResource(R.string.title_commit_verified))
         },
         text = {
             Column(
@@ -36,9 +36,9 @@ fun CommitSignatureDialog(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 val verificationReason = if (signature.wasSignedByGitHub) {
-                    Res.strings.commit_signature_reason_github
+                    R.string.commit_signature_reason_github
                 } else {
-                    Res.strings.commit_signature_reason_user
+                    R.string.commit_signature_reason_user
                 }
 
                 Text(
@@ -80,7 +80,7 @@ fun CommitSignatureDialog(
                     ) {
                         signature.onGpgSignature?.let { gpgSig ->
                             Text(
-                                text = stringResource(Res.strings.label_gpg_key_id, gpgSig.keyId.toString()),
+                                text = stringResource(R.string.label_gpg_key_id, gpgSig.keyId.toString()),
                                 style = MaterialTheme.typography.bodySmall,
                                 fontFamily = FontFamily.Monospace,
                                 textAlign = TextAlign.Center,
@@ -90,7 +90,7 @@ fun CommitSignatureDialog(
 
                         signature.onSshSignature?.let { sshSig ->
                             Text(
-                                text = stringResource(Res.strings.label_ssh_fingerprint, sshSig.keyFingerprint.toString()),
+                                text = stringResource(R.string.label_ssh_fingerprint, sshSig.keyFingerprint.toString()),
                                 style = MaterialTheme.typography.bodySmall,
                                 fontFamily = FontFamily.Monospace,
                                 textAlign = TextAlign.Center,
@@ -99,7 +99,7 @@ fun CommitSignatureDialog(
                         }
 
                         Text(
-                            text = stringResource(Res.strings.label_verified_on, signature.verifiedAt!!.format("MMM d, YYYY, hh:mm a")),
+                            text = stringResource(R.string.label_verified_on, signature.verifiedAt!!.format("MMM d, YYYY, hh:mm a")),
                             style = MaterialTheme.typography.bodySmall,
                             fontFamily = FontFamily.Monospace,
                             textAlign = TextAlign.Center,
@@ -113,7 +113,7 @@ fun CommitSignatureDialog(
             TextButton(
                 onClick = onDismiss
             ) {
-                Text(stringResource(Res.strings.dismiss_okay))
+                Text(stringResource(R.string.dismiss_okay))
             }
         },
         onDismissRequest = onDismiss

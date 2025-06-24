@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 
 @Composable
 fun ReadMeCard(
@@ -110,7 +110,7 @@ fun ReadMeCard(
                             null,
                             modifier = Modifier.size(17.dp)
                         )
-                        Text(stringResource(Res.strings.action_read_more))
+                        Text(stringResource(R.string.action_read_more))
                     }
                 }
             }

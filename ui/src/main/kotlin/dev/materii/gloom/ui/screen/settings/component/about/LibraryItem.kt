@@ -16,12 +16,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mikepenz.aboutlibraries.entity.Library
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.theme.gloomColorScheme
 import dev.materii.gloom.ui.util.contentDescription
@@ -85,7 +85,7 @@ fun LibraryItem(
                     borderColor = labelColor,
                     fillColor = labelColor,
                     modifier = Modifier.contentDescription(
-                        Res.strings.cd_library_author,
+                        R.string.cd_library_author,
                         library.author,
                         mergeDescendants = true
                     )
@@ -100,7 +100,7 @@ fun LibraryItem(
                     borderColor = labelColor,
                     fillColor = labelColor,
                     modifier = Modifier.contentDescription(
-                        Res.strings.cd_library_license,
+                        R.string.cd_library_license,
                         license.name,
                         mergeDescendants = true
                     )
@@ -110,13 +110,13 @@ fun LibraryItem(
             key(library) {
                 val (label, color, icon) = if (library.openSource)
                     Triple(
-                        Res.strings.label_open_source,
+                        R.string.label_open_source,
                         MaterialTheme.gloomColorScheme.statusGreen,
                         Icons.Filled.CheckCircle
                     )
                 else
                     Triple(
-                        Res.strings.label_closed_source,
+                        R.string.label_closed_source,
                         MaterialTheme.gloomColorScheme.statusRed,
                         Icons.Filled.Cancel
                     )

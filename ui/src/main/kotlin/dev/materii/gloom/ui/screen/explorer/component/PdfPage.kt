@@ -6,8 +6,8 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import androidx.compose.ui.res.stringResource
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.ErrorMessage
 import dev.zt64.compose.pdf.RemotePdfState
 import net.engawapg.lib.zoomable.rememberZoomState
@@ -29,7 +29,7 @@ fun PdfPage(
             index = page,
             errorIndicator = {
                 ErrorMessage(
-                    message = stringResource(Res.strings.msg_file_load_error),
+                    message = stringResource(R.string.msg_file_load_error),
                     onRetryClick = { pdfState.loadPdf() },
                     modifier = Modifier.align(Alignment.Center)
                 )

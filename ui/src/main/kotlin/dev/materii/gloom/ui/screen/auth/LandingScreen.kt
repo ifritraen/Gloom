@@ -3,6 +3,7 @@ package dev.materii.gloom.ui.screen.auth
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -11,15 +12,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.Account
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.DividerWithLabel
 import dev.materii.gloom.ui.component.LoadingButton
 import dev.materii.gloom.ui.icon.Social
@@ -49,7 +50,7 @@ class LandingScreen(
                 Spacer(Modifier.weight(0.20f))
 
                 Image(
-                    painter = painterResource(Res.images.gloom_logo),
+                    painter = painterResource(R.drawable.gloom_logo),
                     contentDescription = null,
                     modifier = Modifier.size(300.dp)
                 )
@@ -57,7 +58,7 @@ class LandingScreen(
                 Spacer(modifier = Modifier.weight(0.10f))
 
                 Text(
-                    text = stringResource(Res.strings.msg_welcome),
+                    text = stringResource(R.string.msg_welcome),
                     style = MaterialTheme.typography.headlineLarge.copy(
                         fontWeight = FontWeight.Thin
                     ),
@@ -78,7 +79,7 @@ class LandingScreen(
                             modifier = Modifier.heightIn(max = ((77 * 3) + 12).dp)
                         ) {
                             Text(
-                                text = stringResource(Res.strings.label_choose_account),
+                                text = stringResource(R.string.label_choose_account),
                                 style = MaterialTheme.typography.labelLarge,
                                 textAlign = TextAlign.Center,
                                 modifier = Modifier
@@ -101,7 +102,7 @@ class LandingScreen(
                     }
 
                     DividerWithLabel(
-                        label = { Text(stringResource(Res.strings.label_or)) },
+                        label = { Text(stringResource(R.string.label_or)) },
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 24.dp)
                     )
                 }
@@ -117,7 +118,7 @@ class LandingScreen(
                         imageVector = Icons.Social.GitHub,
                         contentDescription = null
                     )
-                    Text(stringResource(Res.strings.action_github_sign_in))
+                    Text(stringResource(R.string.action_github_sign_in))
                 }
                 Spacer(Modifier.weight(0.20f))
             }

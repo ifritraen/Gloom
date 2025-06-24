@@ -8,11 +8,11 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.util.getFileSizeString
 
 @Composable
@@ -30,12 +30,12 @@ fun ReleaseAssetDownloadDialog(
         onDismissRequest = onClose,
         confirmButton = {
             FilledTonalButton(onClick = { onConfirm(checked) }) {
-                Text(stringResource(Res.strings.action_download))
+                Text(stringResource(R.string.action_download))
             }
         },
         dismissButton = {
             TextButton(onClick = onClose) {
-                Text(stringResource(Res.strings.dismiss_cancel))
+                Text(stringResource(R.string.dismiss_cancel))
             }
         },
         icon = {
@@ -47,7 +47,7 @@ fun ReleaseAssetDownloadDialog(
         },
         title = {
             Text(
-                text = stringResource(Res.strings.title_download_confirm),
+                text = stringResource(R.string.title_download_confirm),
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -58,7 +58,7 @@ fun ReleaseAssetDownloadDialog(
             ) {
                 Text(
                     text = stringResource(
-                        Res.strings.msg_download_dialog_body,
+                        R.string.msg_download_dialog_body,
                         fileName,
                         getFileSizeString(fileSize)
                     ),
@@ -73,7 +73,7 @@ fun ReleaseAssetDownloadDialog(
                         .fillMaxWidth()
                 ) {
                     Checkbox(checked = checked, onCheckedChange = { checked = it })
-                    Text(stringResource(Res.strings.label_dont_show_again))
+                    Text(stringResource(R.string.label_dont_show_again))
                 }
             }
         }

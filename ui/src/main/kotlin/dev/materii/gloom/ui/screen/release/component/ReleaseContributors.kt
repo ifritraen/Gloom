@@ -12,12 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
 import kotlinx.collections.immutable.ImmutableList
@@ -54,7 +54,7 @@ fun ReleaseContributors(
             ) {
                 Avatar(
                     url = avatarUrl,
-                    contentDescription = stringResource(Res.strings.noun_users_avatar, username),
+                    contentDescription = stringResource(R.string.noun_users_avatar, username),
                     modifier = Modifier.size(35.dp)
                 )
                 Text(

@@ -9,15 +9,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.ReleaseItem
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.screen.release.ReleaseScreen
 import dev.materii.gloom.ui.theme.DarkGreen
@@ -61,14 +61,14 @@ fun ReleaseItem(
 
             if (release.isLatest) {
                 Label(
-                    text = stringResource(Res.strings.label_latest),
+                    text = stringResource(R.string.label_latest),
                     textColor = DarkGreen
                 )
             }
 
             if (release.isPrerelease) {
                 Label(
-                    text = stringResource(Res.strings.label_prerelease),
+                    text = stringResource(R.string.label_prerelease),
                     textColor = Color(0xFFFF9800)
                 )
             }

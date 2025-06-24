@@ -9,13 +9,13 @@ import androidx.compose.material.icons.filled.PersonAddAlt1
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.FollowedUserFeedItemFragment
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
 import dev.materii.gloom.ui.util.annotatingStringResource
@@ -34,11 +34,11 @@ fun FollowedUserItem(
     val userLogin = user.feedUser?.login ?: user.feedOrg?.login
     val userId = user.feedUser?.id ?: user.feedOrg?.id!!
     val actorText = if (user.feedUser?.isViewer == true) annotatingStringResource(
-        Res.strings.followed_you,
+        R.string.followed_you,
         actor.login
     ) {
         followedAnnotations(it)
-    } else annotatingStringResource(Res.strings.followed_user, actor.login, userLogin ?: "ghost") {
+    } else annotatingStringResource(R.string.followed_user, actor.login, userLogin ?: "ghost") {
         followedAnnotations(it)
     }
 
@@ -50,9 +50,9 @@ fun FollowedUserItem(
     ) {
         FeedActor(
             iconUrl = actor.avatarUrl,
-            iconDescription = stringResource(Res.strings.noun_users_avatar, actor.login),
+            iconDescription = stringResource(R.string.noun_users_avatar, actor.login),
             badgeIcon = Icons.Filled.PersonAddAlt1,
-            badgeIconDescription = stringResource(Res.strings.cd_followed),
+            badgeIconDescription = stringResource(R.string.cd_followed),
             onIconClick = { navigator.navigate(ProfileScreen(actor.login)) },
             text = actorText,
             createdAt = item.createdAt

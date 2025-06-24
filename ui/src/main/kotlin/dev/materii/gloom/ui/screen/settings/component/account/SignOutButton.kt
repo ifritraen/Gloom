@@ -13,8 +13,8 @@ import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import androidx.compose.ui.res.stringResource
+import dev.materii.gloom.shared.R
 
 @Composable
 fun SignOutButton(
@@ -34,7 +34,7 @@ fun SignOutButton(
         ) {
             Icon(
                 imageVector = Icons.Outlined.Close,
-                contentDescription = stringResource(Res.strings.action_sign_out)
+                contentDescription = stringResource(R.string.action_sign_out)
             )
         }
     }

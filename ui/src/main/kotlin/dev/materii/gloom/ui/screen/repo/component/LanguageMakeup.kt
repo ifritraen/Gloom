@@ -13,13 +13,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.Languages
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.util.parsedColor
-import dev.materii.gloom.util.pluralStringResource
 import java.text.DecimalFormat
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -48,7 +48,7 @@ fun LanguageMakeup(
         val otherSize = languages.totalSize - _languages.sumOf { it.size }
         _languages.add(
             LangWithPercent(
-                name = stringResource(Res.strings.noun_other),
+                name = stringResource(R.string.noun_other),
                 color = MaterialTheme.colorScheme.secondaryContainer,
                 percent = otherSize.toFloat() / languages.totalSize,
                 size = otherSize
@@ -61,7 +61,7 @@ fun LanguageMakeup(
         modifier = modifier.padding(16.dp)
     ) {
         Text(
-            text = pluralStringResource(Res.plurals.plural_language, _languages.size),
+            text = pluralStringResource(R.plurals.plural_language, _languages.size),
             style = MaterialTheme.typography.labelLarge
         )
 

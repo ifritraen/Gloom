@@ -17,14 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.model.ModelRepo
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.LabeledIcon
 import dev.materii.gloom.ui.icon.Custom
@@ -81,7 +81,7 @@ fun RepoItem(
         Spacer(Modifier)
 
         Text(
-            text = repo.name ?: stringResource(Res.strings.placeholder_empty_repo),
+            text = repo.name ?: stringResource(R.string.placeholder_empty_repo),
             style = MaterialTheme.typography.labelLarge.copy(
                 fontSize = 16.sp
             ),
@@ -103,7 +103,7 @@ fun RepoItem(
         if (repo.fork == true && !card) {
             LabeledIcon(
                 icon = Icons.Custom.Fork,
-                label = stringResource(Res.strings.label_forked_from, repo.parent!!.fullName!!),
+                label = stringResource(R.string.label_forked_from, repo.parent!!.fullName!!),
                 iconTint = LocalContentColor.current.copy(0.6f)
             )
         }

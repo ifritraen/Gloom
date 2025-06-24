@@ -10,11 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 
 @Composable
 fun ErrorMessage(
@@ -48,7 +48,7 @@ fun ErrorMessage(
             FilledTonalButton(
                 onClick = onRetryClick,
             ) {
-                Text(stringResource(Res.strings.action_try_again))
+                Text(stringResource(R.string.action_try_again))
             }
         }
     }

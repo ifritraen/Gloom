@@ -1,12 +1,11 @@
 package dev.materii.gloom.ui.util
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.util.getString
 
 // Credit to rushii (github.com/rushiiMachine)
@@ -19,7 +18,7 @@ import dev.materii.gloom.util.getString
  */
 @Composable
 inline fun annotatingStringResource(
-    res: StringResource,
+    res: Int,
     vararg args: Any,
     crossinline annotationHandler: @Composable (annotationName: String) -> SpanStyle?
 ): AnnotatedString {
@@ -65,19 +64,19 @@ inline fun annotatingStringResource(
 @Composable
 fun getFileSizeString(size: Int): String {
     return when {
-        size < dev.materii.gloom.util.Constants.FileSize.KILO -> getString(Res.strings.file_size_bytes, size)
+        size < dev.materii.gloom.util.Constants.FileSize.KILO -> getString(R.string.file_size_bytes, size)
         size < dev.materii.gloom.util.Constants.FileSize.MEGA -> getString(
-            Res.strings.file_size_kilobytes,
+            R.string.file_size_kilobytes,
             size / dev.materii.gloom.util.Constants.FileSize.KILO
         )
 
         size < dev.materii.gloom.util.Constants.FileSize.GIGA -> getString(
-            Res.strings.file_size_megabytes,
+            R.string.file_size_megabytes,
             size / dev.materii.gloom.util.Constants.FileSize.MEGA
         )
 
         else                                                    -> getString(
-            Res.strings.file_size_gigabytes,
+            R.string.file_size_gigabytes,
             size / dev.materii.gloom.util.Constants.FileSize.GIGA
         )
     }

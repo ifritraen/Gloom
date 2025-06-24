@@ -12,15 +12,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import coil3.compose.AsyncImage
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.RepoDetails
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
 
@@ -38,7 +38,7 @@ fun ContributorsRow(
             modifier = Modifier.padding(16.dp)
         ) {
             Text(
-                text = stringResource(Res.strings.title_contributors),
+                text = stringResource(R.string.title_contributors),
                 style = MaterialTheme.typography.labelLarge
             )
             Text(
@@ -67,7 +67,7 @@ fun ContributorsRow(
                         AsyncImage(
                             model = contributor.contributorAvatar.avatarUrl,
                             contentDescription = stringResource(
-                                Res.strings.noun_users_avatar,
+                                R.string.noun_users_avatar,
                                 contributor.contributorAvatar.login
                             ),
                             modifier = Modifier

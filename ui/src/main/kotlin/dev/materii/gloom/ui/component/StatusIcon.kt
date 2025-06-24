@@ -13,38 +13,37 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.type.StatusState
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.theme.gloomColorScheme
 
 @Stable
 @Composable
-fun StatusState.components(): Triple<ImageVector, Color, StringResource> = when (this) {
+fun StatusState.components(): Triple<ImageVector, Color, Int> = when (this) {
     StatusState.EXPECTED -> Triple(
         Icons.Outlined.Circle,
         MaterialTheme.colorScheme.surfaceTint,
-        Res.strings.label_checks
+        R.string.label_checks
     )
 
-    StatusState.PENDING  -> Triple(
+    StatusState.PENDING -> Triple(
         Icons.Filled.Circle,
         MaterialTheme.gloomColorScheme.statusYellow,
-        Res.strings.label_checks
+        R.string.label_checks
     )
 
-    StatusState.SUCCESS  -> Triple(
+    StatusState.SUCCESS -> Triple(
         Icons.Filled.CheckCircle,
         MaterialTheme.gloomColorScheme.statusGreen,
-        Res.strings.label_checks
+        R.string.label_checks
     )
 
-    else                 -> Triple(
+    else -> Triple(
         Icons.Filled.Cancel,
         MaterialTheme.colorScheme.error,
-        Res.strings.label_checks_failed
+        R.string.label_checks_failed
     )
 }
 

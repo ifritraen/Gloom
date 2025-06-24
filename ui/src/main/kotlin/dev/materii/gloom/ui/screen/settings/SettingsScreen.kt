@@ -13,13 +13,13 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.auth.LandingScreen
 import dev.materii.gloom.ui.screen.settings.about.AboutScreen
@@ -68,16 +68,16 @@ class SettingsScreen: Screen {
                 SettingsGroup {
                     SettingsCategory(
                         icon = Icons.Outlined.Palette,
-                        text = stringResource(Res.strings.settings_appearance),
-                        subtext = stringResource(Res.strings.settings_appearance_description),
+                        text = stringResource(R.string.settings_appearance),
+                        subtext = stringResource(R.string.settings_appearance_description),
                         destination = ::AppearanceSettingsScreen
                     )
 
                     if (dev.materii.gloom.util.Features.contains(Feature.CHANGE_ICON)) {
                         SettingsCategory(
                             icon = Icons.Outlined.DesignServices,
-                            text = stringResource(Res.strings.settings_app_icon),
-                            subtext = stringResource(Res.strings.settings_app_icon_description),
+                            text = stringResource(R.string.settings_app_icon),
+                            subtext = stringResource(R.string.settings_app_icon_description),
                             destination = ::AppIconSettingsScreen
                         )
                     }
@@ -86,8 +86,8 @@ class SettingsScreen: Screen {
                 SettingsGroup {
                     SettingsCategory(
                         icon = Icons.Outlined.AccountCircle,
-                        text = stringResource(Res.strings.settings_accounts),
-                        subtext = stringResource(Res.strings.settings_accounts_description),
+                        text = stringResource(R.string.settings_accounts),
+                        subtext = stringResource(R.string.settings_accounts_description),
                         destination = ::AccountSettingsScreen
                     )
                 }
@@ -96,16 +96,16 @@ class SettingsScreen: Screen {
                     if (IsDeveloper) {
                         SettingsCategory(
                             icon = Icons.Outlined.Code,
-                            text = stringResource(Res.strings.settings_development),
-                            subtext = stringResource(Res.strings.settings_development_description),
+                            text = stringResource(R.string.settings_development),
+                            subtext = stringResource(R.string.settings_development_description),
                             destination = ::DeveloperSettingsScreen
                         )
                     }
 
                     SettingsCategory(
                         icon = Icons.Outlined.Info,
-                        text = stringResource(Res.strings.settings_about),
-                        subtext = "${stringResource(Res.strings.app_name)} v$VersionName",
+                        text = stringResource(R.string.settings_about),
+                        subtext = "${stringResource(R.string.app_name)} v$VersionName",
                         destination = ::AboutScreen
                     )
                 }
@@ -120,7 +120,7 @@ class SettingsScreen: Screen {
         onSignOutClick: () -> Unit
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.navigation_settings),
+            title = stringResource(R.string.navigation_settings),
             scrollBehavior = scrollBehavior,
             actions = {
                 IconButton(
@@ -129,7 +129,7 @@ class SettingsScreen: Screen {
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Outlined.Logout,
-                        contentDescription = stringResource(Res.strings.action_sign_out)
+                        contentDescription = stringResource(R.string.action_sign_out)
                     )
                 }
             }

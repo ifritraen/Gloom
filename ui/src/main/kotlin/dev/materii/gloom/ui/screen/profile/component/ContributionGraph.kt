@@ -12,13 +12,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.compositeOver
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.Contributions
 import dev.materii.gloom.gql.type.ContributionLevel
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.widget.alert.LocalAlertController
 import dev.materii.gloom.util.format
 import dev.materii.gloom.util.getPluralString
@@ -39,7 +39,7 @@ fun ContributionGraph(
             .padding(horizontal = 16.dp)
     ) {
         Text(
-            text = stringResource(Res.strings.section_title_contributions, calendar.totalContributions),
+            text = stringResource(R.string.section_title_contributions, calendar.totalContributions),
             style = MaterialTheme.typography.labelLarge,
             fontSize = 15.sp
         )
@@ -65,7 +65,7 @@ fun ContributionGraph(
                                     onClick = {
                                         alertController.showText(
                                             getPluralString(
-                                                Res.plurals.contributions_toast,
+                                                R.plurals.contributions_toast,
                                                 day.contributionCount,
                                                 day.date.format("MMM d, YYYY"),
                                                 day.contributionCount
@@ -87,7 +87,7 @@ fun ContributionGraph(
                     .padding(16.dp)
             ) {
                 Text(
-                    text = stringResource(Res.strings.label_less),
+                    text = stringResource(R.string.label_less),
                     style = MaterialTheme.typography.labelMedium,
                     color = LocalContentColor.current.copy(0.5f)
                 )
@@ -103,7 +103,7 @@ fun ContributionGraph(
                 }
 
                 Text(
-                    text = stringResource(Res.strings.label_more),
+                    text = stringResource(R.string.label_more),
                     style = MaterialTheme.typography.labelMedium,
                     color = LocalContentColor.current.copy(0.5f)
                 )

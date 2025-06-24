@@ -11,10 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 
 @Composable
 fun TrendingFeedFooter(
@@ -42,14 +42,14 @@ fun TrendingFeedFooter(
             verticalArrangement = Arrangement.spacedBy(5.dp)
         ) {
             Text(
-                text = stringResource(Res.strings.msg_trending_footer_title),
+                text = stringResource(R.string.msg_trending_footer_title),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center
             )
 
             Text(
-                text = stringResource(Res.strings.msg_trending_footer_description),
+                text = stringResource(R.string.msg_trending_footer_description),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
                 textAlign = TextAlign.Center

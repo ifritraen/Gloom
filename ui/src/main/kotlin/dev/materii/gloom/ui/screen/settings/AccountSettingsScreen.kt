@@ -16,12 +16,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.auth.LandingScreen
 import dev.materii.gloom.ui.screen.root.RootScreen
@@ -124,7 +124,7 @@ class AccountSettingsScreen: Screen {
                     ) {
                         SettingsButton(
                             label = stringResource(
-                                if (viewModel.isEditMode) Res.strings.action_sign_out_all else Res.strings.action_add_account
+                                if (viewModel.isEditMode) R.string.action_sign_out_all else R.string.action_add_account
                             ),
                             isDanger = viewModel.isEditMode,
                             onClick = {
@@ -149,7 +149,7 @@ class AccountSettingsScreen: Screen {
         onEditClick: () -> Unit
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.settings_accounts),
+            title = stringResource(R.string.settings_accounts),
             scrollBehavior = scrollBehavior,
             actions = {
                 IconToggleButton(
@@ -161,7 +161,7 @@ class AccountSettingsScreen: Screen {
                 ) {
                     Icon(
                         imageVector = if (isEditMode) Icons.Filled.Edit else Icons.Outlined.Edit,
-                        contentDescription = stringResource(if (isEditMode) Res.strings.action_stop_edit else Res.strings.action_edit)
+                        contentDescription = stringResource(if (isEditMode) R.string.action_stop_edit else R.string.action_edit)
                     )
                 }
             }

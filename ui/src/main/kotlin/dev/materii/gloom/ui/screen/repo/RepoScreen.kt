@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -28,10 +29,9 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.benasher44.uuid.uuid4
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.domain.manager.ShareManager
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.BackButton
 import dev.materii.gloom.ui.component.Collapsable
@@ -98,7 +98,7 @@ class RepoScreen(
                     under = {
                         if (viewModel.repoOverview?.isArchived == true) {
                             TextBanner(
-                                text = { Text(stringResource(Res.strings.label_repo_archived)) },
+                                text = { Text(stringResource(R.string.label_repo_archived)) },
                                 icon = {
                                     Icon(
                                         Icons.Outlined.Inventory2,
@@ -205,7 +205,7 @@ class RepoScreen(
                                 Avatar(
                                     url = it.owner.avatarUrl,
                                     contentDescription = stringResource(
-                                        Res.strings.noun_users_avatar,
+                                        R.string.noun_users_avatar,
                                         it.owner.login
                                     ),
                                     type = User.Type.fromTypeName(it.owner.__typename),
@@ -245,7 +245,7 @@ class RepoScreen(
             actions = {
                 viewModel.repoOverview?.let {
                     IconButton(onClick = { shareManager.shareText("https://github.com/${it.owner.login}/${it.name}") }) {
-                        Icon(Icons.Filled.Share, stringResource(Res.strings.action_share))
+                        Icon(Icons.Filled.Share, stringResource(R.string.action_share))
                     }
                 }
             }

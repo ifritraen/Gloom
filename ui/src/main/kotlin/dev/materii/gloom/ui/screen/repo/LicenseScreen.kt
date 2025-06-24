@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
@@ -17,8 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.BackButton
 import dev.materii.gloom.ui.component.NavBarSpacer
 import dev.materii.gloom.ui.screen.repo.component.LicenseDetails
@@ -107,7 +107,7 @@ class LicenseScreen(
                         },
                         style = MaterialTheme.typography.labelLarge
                     )
-                    Text(stringResource(Res.strings.title_license))
+                    Text(stringResource(R.string.title_license))
                 }
             },
             navigationIcon = {

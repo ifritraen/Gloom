@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
@@ -14,10 +15,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.gql.fragment.ReleaseDetails
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.screen.repo.RepoScreen
@@ -75,14 +75,14 @@ fun ReleaseHeader(
 
             if (details.isLatest) {
                 Label(
-                    text = stringResource(Res.strings.label_latest),
+                    text = stringResource(R.string.label_latest),
                     textColor = MaterialTheme.gloomColorScheme.statusGreen
                 )
             }
 
             if (details.isPrerelease) {
                 Label(
-                    text = stringResource(Res.strings.label_prerelease),
+                    text = stringResource(R.string.label_prerelease),
                     textColor = MaterialTheme.gloomColorScheme.statusYellow
                 )
             }

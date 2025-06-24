@@ -8,13 +8,13 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.ForkedRepositoryFeedItemFragment
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.icon.Custom
 import dev.materii.gloom.ui.icon.custom.Fork
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
@@ -41,11 +41,11 @@ fun ForkedRepoItem(
     ) {
         FeedActor(
             iconUrl = actor.avatarUrl,
-            iconDescription = stringResource(Res.strings.noun_users_avatar, actor.login),
+            iconDescription = stringResource(R.string.noun_users_avatar, actor.login),
             badgeIcon = Icons.Custom.Fork,
-            badgeIconDescription = stringResource(Res.strings.cd_forked_repo),
+            badgeIconDescription = stringResource(R.string.cd_forked_repo),
             onIconClick = { navigator.navigate(ProfileScreen(actor.login)) },
-            text = annotatingStringResource(res = Res.strings.forked_repo, actor.login) {
+            text = annotatingStringResource(res = R.string.forked_repo, actor.login) {
                 when (it) {
                     "name" -> SpanStyle(color = MaterialTheme.colorScheme.onSurface)
                     "text" -> SpanStyle(color = MaterialTheme.colorScheme.onSurface.copy(0.7f))

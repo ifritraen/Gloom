@@ -14,6 +14,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
@@ -25,8 +27,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import com.benasher44.uuid.uuid4
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.LargeSegmentedButton
 import dev.materii.gloom.ui.component.LargeSegmentedButtonRow
 import dev.materii.gloom.ui.component.ThinDivider
@@ -43,7 +44,6 @@ import dev.materii.gloom.ui.screen.repo.viewmodel.RepoDetailsViewModel
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
 import dev.materii.gloom.ui.widget.markdown.Markdown
 import dev.materii.gloom.util.NumberFormatter
-import dev.materii.gloom.util.pluralStringResource
 import org.koin.core.parameter.parametersOf
 
 class DetailsTab(
@@ -53,7 +53,7 @@ class DetailsTab(
 
     override val key = "$owner/$name-${uuid4()}"
     override val options: TabOptions
-        @Composable get() = TabOptions(1u, stringResource(Res.strings.repo_tab_details))
+        @Composable get() = TabOptions(1u, stringResource(R.string.repo_tab_details))
 
     @Composable
     @OptIn(ExperimentalMaterial3Api::class)
@@ -119,7 +119,7 @@ class DetailsTab(
                                     )
                                     Text(
                                         text = stringResource(
-                                            Res.strings.label_forked_from,
+                                            R.string.label_forked_from,
                                             nameWithOwner
                                         ),
                                         style = MaterialTheme.typography.bodySmall
@@ -140,7 +140,7 @@ class DetailsTab(
                             LargeSegmentedButton(
                                 icon = if (repoDetails.viewerHasStarred) Icons.Filled.Star else Icons.Outlined.StarBorder,
                                 text = pluralStringResource(
-                                    res = Res.plurals.stars,
+                                    id = R.plurals.stars,
                                     count = repoDetails.stargazerCount,
                                     NumberFormatter.compact(repoDetails.stargazerCount)
                                 ),
@@ -159,7 +159,7 @@ class DetailsTab(
                             LargeSegmentedButton(
                                 icon = Icons.Custom.Fork,
                                 text = pluralStringResource(
-                                    res = Res.plurals.forks,
+                                    id = R.plurals.forks,
                                     count = repoDetails.forkCount,
                                     NumberFormatter.compact(repoDetails.forkCount)
                                 ),

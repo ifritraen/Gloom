@@ -29,10 +29,9 @@
     <string name="app_icon_main">Padrão</string>
     <string name="app_icon_main_description">O ícone padrão do Gloom.</string>
     <string name="app_icon_sky">Céu</string>
-    <string name="app_icon_sky_description">Huh... Essa é uma nuvem interessante...</string>
+    <string name="app_icon_sky_description">Huh… Essa é uma nuvem interessante…</string>
     <string name="app_icon_light">Claro</string>
-    <string name="app_icon_light_description">O original, mas a luz.</
-        string>
+    <string name="app_icon_light_description">O original, mas a luz.</string>
     <string name="app_icon_collection_stylized">Estilizado</string>
     <string name="app_icon_blueprint">Blueprint</string>
     <string name="app_icon_blueprint_description">Construir algo ótimo!</string>

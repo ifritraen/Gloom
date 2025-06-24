@@ -18,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
@@ -26,8 +27,7 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.home.component.*
 import dev.materii.gloom.ui.screen.home.viewmodel.HomeViewModel
@@ -41,7 +41,7 @@ class HomeScreen: Tab {
             val selected = navigator.current == this
             return TabOptions(
                 0u,
-                stringResource(Res.strings.navigation_home),
+                stringResource(R.string.navigation_home),
                 rememberVectorPainter(if (selected) Icons.Filled.Home else Icons.Outlined.Home)
             )
         }

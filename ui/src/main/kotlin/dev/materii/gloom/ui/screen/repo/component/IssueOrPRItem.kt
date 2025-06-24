@@ -16,17 +16,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.type.PullRequestReviewDecision
 import dev.materii.gloom.gql.type.StatusState
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.theme.gloomColorScheme
 import dev.materii.gloom.ui.util.parsedColor
@@ -40,7 +39,7 @@ fun IssueOrPRItem(
     createdAt: Instant,
     icon: ImageVector,
     color: Color,
-    titleCDRes: StringResource,
+    titleCDRes: Int,
     number: Int,
     title: String,
     authorUsername: String?,
@@ -87,7 +86,7 @@ fun IssueOrPRItem(
 
             Text(
                 text = stringResource(
-                    Res.strings.msg_issue_or_pr_author,
+                    R.string.msg_issue_or_pr_author,
                     number,
                     authorUsername ?: "ghost"
                 ),
@@ -173,7 +172,7 @@ fun IssueOrPRItem(
                     }
 
                     Label(
-                        text = stringResource(Res.strings.label_reviews),
+                        text = stringResource(R.string.label_reviews),
                         icon = statusIcon,
                         textColor = MaterialTheme.colorScheme.onSecondaryContainer,
                         fillColor = MaterialTheme.colorScheme.secondaryContainer,
@@ -182,7 +181,7 @@ fun IssueOrPRItem(
                     )
                 }
 
-                val labelCD = stringResource(Res.strings.cd_label_comments, totalComments)
+                val labelCD = stringResource(R.string.cd_label_comments, totalComments)
                 Label(
                     text = totalComments.toString(),
                     icon = Icons.Outlined.ModeComment,

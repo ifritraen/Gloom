@@ -9,12 +9,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.enums.Theme
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.settings.component.*
 import dev.materii.gloom.ui.screen.settings.viewmodel.AppearanceSettingsViewModel
@@ -44,12 +44,12 @@ class AppearanceSettingsScreen: Screen {
                     .padding(horizontal = 16.dp)
                     .verticalScroll(rememberScrollState())
             ) {
-                SettingsHeader(stringResource(Res.strings.appearance_theme))
+                SettingsHeader(stringResource(R.string.appearance_theme))
                 SettingsGroup {
                     if (dev.materii.gloom.util.Features.contains(Feature.DYNAMIC_COLOR)) {
                         SettingsSwitch(
-                            label = stringResource(Res.strings.appearance_monet),
-                            secondaryLabel = stringResource(Res.strings.appearance_monet_description),
+                            label = stringResource(R.string.appearance_monet),
+                            secondaryLabel = stringResource(R.string.appearance_monet_description),
                             pref = viewModel.prefs.monet,
                             onPrefChange = { viewModel.prefs.monet = it },
                             enabled = dev.materii.gloom.util.supportsMonet
@@ -57,23 +57,23 @@ class AppearanceSettingsScreen: Screen {
                     }
 
                     SettingsItemChoice(
-                        label = stringResource(Res.strings.appearance_theme),
+                        label = stringResource(R.string.appearance_theme),
                         pref = viewModel.prefs.theme,
                         onPrefChange = { viewModel.prefs.theme = it },
                         labelFactory = {
                             when (it) {
-                                Theme.SYSTEM -> getString(Res.strings.theme_system)
-                                Theme.LIGHT  -> getString(Res.strings.theme_light)
-                                Theme.DARK   -> getString(Res.strings.theme_dark)
+                                Theme.SYSTEM -> getString(R.string.theme_system)
+                                Theme.LIGHT -> getString(R.string.theme_light)
+                                Theme.DARK -> getString(R.string.theme_dark)
                             }
                         }
                     )
                 }
 
-                SettingsHeader(stringResource(Res.strings.appearance_av_shape))
+                SettingsHeader(stringResource(R.string.appearance_av_shape))
                 SettingsGroup {
                     AvatarShapeSetting(
-                        text = { Text(stringResource(Res.strings.noun_user)) },
+                        text = { Text(stringResource(R.string.noun_user)) },
                         currentShape = viewModel.prefs.userAvatarShape,
                         onShapeUpdate = { viewModel.prefs.userAvatarShape = it },
                         cornerRadius = viewModel.prefs.userAvatarRadius,
@@ -81,7 +81,7 @@ class AppearanceSettingsScreen: Screen {
                     )
 
                     AvatarShapeSetting(
-                        text = { Text(stringResource(Res.strings.noun_org)) },
+                        text = { Text(stringResource(R.string.noun_org)) },
                         currentShape = viewModel.prefs.orgAvatarShape,
                         onShapeUpdate = { viewModel.prefs.orgAvatarShape = it },
                         cornerRadius = viewModel.prefs.orgAvatarRadius,
@@ -98,7 +98,7 @@ class AppearanceSettingsScreen: Screen {
         scrollBehavior: TopAppBarScrollBehavior
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.settings_appearance),
+            title = stringResource(R.string.settings_appearance),
             scrollBehavior = scrollBehavior
         )
     }

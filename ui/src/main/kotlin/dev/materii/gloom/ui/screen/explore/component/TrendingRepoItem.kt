@@ -13,13 +13,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.domain.manager.enums.TrendingPeriodPreference
 import dev.materii.gloom.gql.fragment.TrendingRepository
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.LabeledIcon
 import dev.materii.gloom.ui.theme.gloomColorScheme
@@ -103,7 +103,7 @@ fun TrendingRepoItem(
                         Icon(
                             imageVector = if (trendingRepository.viewerHasStarred) Icons.Filled.Star else Icons.Outlined.StarOutline,
                             contentDescription = stringResource(
-                                if (trendingRepository.viewerHasStarred) Res.strings.action_unstar else Res.strings.action_star
+                                if (trendingRepository.viewerHasStarred) R.string.action_unstar else R.string.action_star
                             )
                         )
                     }
@@ -122,9 +122,9 @@ fun TrendingRepoItem(
                     iconTint = MaterialTheme.gloomColorScheme.statusYellow,
                     label = stringResource(
                         when (trendingPeriod) {
-                            TrendingPeriodPreference.MONTHLY -> Res.strings.label_stars_month
-                            TrendingPeriodPreference.WEEKLY  -> Res.strings.label_stars_week
-                            TrendingPeriodPreference.DAILY   -> Res.strings.label_stars_day
+                            TrendingPeriodPreference.MONTHLY -> R.string.label_stars_month
+                            TrendingPeriodPreference.WEEKLY -> R.string.label_stars_week
+                            TrendingPeriodPreference.DAILY -> R.string.label_stars_day
                         },
                         NumberFormatter.compact(trendingRepository.starsSince)
                     )

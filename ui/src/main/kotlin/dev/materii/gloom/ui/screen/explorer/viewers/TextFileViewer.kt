@@ -17,10 +17,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.util.DimenUtil.multiply
 import dev.materii.gloom.ui.widget.code.CodeViewer
 
@@ -91,7 +91,7 @@ fun TextFileViewer(
             ) {
                 Icon(
                     Icons.Outlined.SearchOff,
-                    contentDescription = stringResource(Res.strings.action_reset_zoom)
+                    contentDescription = stringResource(R.string.action_reset_zoom)
                 )
             }
         }

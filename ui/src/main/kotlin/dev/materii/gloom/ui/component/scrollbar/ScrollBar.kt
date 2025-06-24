@@ -65,7 +65,7 @@ fun ScrollBar(
     val trackSizingModifier = Modifier.run {
         when (orientation) {
             Orientation.Horizontal -> fillMaxWidth()
-            Orientation.Vertical   -> fillMaxHeight()
+            Orientation.Vertical -> fillMaxHeight()
         }
     }
     val thumbSizeModifier = Modifier.run {
@@ -75,7 +75,7 @@ fun ScrollBar(
                 height = thickness
             )
 
-            Orientation.Vertical   -> size(
+            Orientation.Vertical -> size(
                 width = thickness,
                 height = thumbSize
             )
@@ -85,7 +85,7 @@ fun ScrollBar(
         val thumbOffset = (scrollState.value.toDp() * scrollBarSizeRatio) - safeAreaPadding
         when (orientation) {
             Orientation.Horizontal -> offset(thumbOffset, 0.dp)
-            Orientation.Vertical   -> offset(0.dp, thumbOffset)
+            Orientation.Vertical -> offset(0.dp, thumbOffset)
         }
     }
 
@@ -98,7 +98,7 @@ fun ScrollBar(
         ) {
             screenSize = when (orientation) {
                 Orientation.Horizontal -> maxWidth
-                Orientation.Vertical   -> maxHeight
+                Orientation.Vertical -> maxHeight
             }
 
             // Touch target for the thumb

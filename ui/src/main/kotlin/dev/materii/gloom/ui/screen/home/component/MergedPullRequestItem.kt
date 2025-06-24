@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -17,12 +19,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.pluralStringResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.gql.fragment.MergedPullRequestFeedItemFragment
 import dev.materii.gloom.gql.type.ReactionContent
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.component.ThinDivider
 import dev.materii.gloom.ui.icon.Custom
@@ -55,12 +55,12 @@ fun MergedPullRequestItem(
     ) {
         FeedActor(
             iconUrl = actor.avatarUrl,
-            iconDescription = stringResource(Res.strings.noun_users_avatar, actor.login),
+            iconDescription = stringResource(R.string.noun_users_avatar, actor.login),
             badgeIcon = Icons.Custom.MergedPullRequest,
-            badgeIconDescription = stringResource(Res.strings.cd_forked_repo),
+            badgeIconDescription = stringResource(R.string.cd_forked_repo),
             onIconClick = { navigator.navigate(ProfileScreen(actor.login)) },
             text = annotatingStringResource(
-                res = Res.strings.contributed_repo,
+                res = R.string.contributed_repo,
                 actor.login,
                 "${baseRepo?.owner?.login}/${baseRepo?.name}"
             ) {
@@ -123,7 +123,7 @@ fun PullRequestCard(
                 modifier = Modifier.padding(horizontal = 16.dp)
             ) {
                 Label(
-                    text = stringResource(Res.strings.label_pr_merged),
+                    text = stringResource(R.string.label_pr_merged),
                     icon = Icons.Custom.MergedPullRequest,
                     borderColor = Color.Transparent,
                     fillColor = MaterialTheme.gloomColorScheme.statusPurple,
@@ -132,8 +132,8 @@ fun PullRequestCard(
 
                 Text(
                     text = pluralStringResource(
-                        resource = Res.plurals.plural_pr_merge_details,
-                        quantity = pullRequest.commits.totalCount,
+                        id = R.plurals.plural_pr_merge_details,
+                        count = pullRequest.commits.totalCount,
                         pullRequest.mergedBy?.login ?: "ghost",
                         pullRequest.commits.totalCount,
                         pullRequest.baseRefName

@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -21,8 +22,7 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import com.benasher44.uuid.uuid4
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.screen.explorer.DirectoryListingScreen
 import dev.materii.gloom.ui.screen.repo.CommitsScreen
 import dev.materii.gloom.ui.screen.repo.viewmodel.RepoCodeViewModel
@@ -37,7 +37,7 @@ class CodeTab(
 
     override val key = "$owner/$name-${uuid4()}"
     override val options: TabOptions
-        @Composable get() = TabOptions(1u, stringResource(Res.strings.repo_tab_code))
+        @Composable get() = TabOptions(1u, stringResource(R.string.repo_tab_code))
 
     @Composable
     @OptIn(ExperimentalMaterial3Api::class)
@@ -86,7 +86,7 @@ class CodeTab(
                                         .clickable { nav.navigate(CommitsScreen(state.id, state.defaultBranch)) }
                                         .padding(16.dp)
                                 ) {
-                                    Text(stringResource(Res.strings.commits))
+                                    Text(stringResource(R.string.commits))
                                 }
                             }
                         }

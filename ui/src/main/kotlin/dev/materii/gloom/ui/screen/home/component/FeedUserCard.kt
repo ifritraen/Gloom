@@ -10,20 +10,21 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.gql.fragment.FeedOrg
 import dev.materii.gloom.gql.fragment.FeedUser
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.LabeledIcon
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
+import dev.materii.gloom.util.Constants
 import dev.materii.gloom.util.NumberFormatter
-import dev.materii.gloom.util.pluralStringResource
 
 @Composable
 fun FeedUserCard(
@@ -65,8 +66,8 @@ fun FeedUserCard(
                 Avatar(
                     url = avatarUrl,
                     contentDescription = stringResource(
-                        Res.strings.noun_users_avatar,
-                        login ?: "ghost"
+                        R.string.noun_users_avatar,
+                        login ?: Constants.DEFAULT_USERNAME
                     ),
                     type = type,
                     modifier = Modifier.size(47.dp)
@@ -87,7 +88,7 @@ fun FeedUserCard(
                         )
                     } else {
                         Text(
-                            login ?: "ghost",
+                            login ?: Constants.DEFAULT_USERNAME,
                             style = MaterialTheme.typography.labelLarge,
                             fontSize = 17.sp
                         )
@@ -109,7 +110,7 @@ fun FeedUserCard(
                 LabeledIcon(
                     icon = Icons.Outlined.Book,
                     label = pluralStringResource(
-                        Res.plurals.repositories,
+                        R.plurals.repositories,
                         count = repos ?: 0,
                         NumberFormatter.compact(repos ?: 0)
                     )
@@ -119,7 +120,7 @@ fun FeedUserCard(
                     LabeledIcon(
                         icon = Icons.Outlined.Person,
                         label = pluralStringResource(
-                            Res.plurals.followers,
+                            R.plurals.followers,
                             count = followerCount,
                             NumberFormatter.compact(followerCount)
                         )
@@ -141,8 +142,8 @@ fun FeedUserCard(
                 Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
 
                 Text(
-                    if (viewerIsFollowing == true) stringResource(Res.strings.action_unfollow) else stringResource(
-                        Res.strings.action_follow
+                    if (viewerIsFollowing == true) stringResource(R.string.action_unfollow) else stringResource(
+                        R.string.action_follow
                     )
                 )
             }

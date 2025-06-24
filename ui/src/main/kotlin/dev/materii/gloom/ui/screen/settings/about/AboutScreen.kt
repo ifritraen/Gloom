@@ -11,10 +11,10 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.settings.component.SettingsCategory
 import dev.materii.gloom.ui.screen.settings.component.SettingsGroup
@@ -39,8 +39,8 @@ class AboutScreen: Screen {
                 SettingsGroup {
                     SettingsCategory(
                         icon = Icons.Outlined.Book,
-                        text = stringResource(Res.strings.settings_libraries),
-                        subtext = stringResource(Res.strings.settings_libraries_description),
+                        text = stringResource(R.string.settings_libraries),
+                        subtext = stringResource(R.string.settings_libraries_description),
                         destination = ::LibrariesScreen
                     )
                 }
@@ -54,7 +54,7 @@ class AboutScreen: Screen {
         scrollBehavior: TopAppBarScrollBehavior
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.settings_about),
+            title = stringResource(R.string.settings_about),
             scrollBehavior = scrollBehavior
         )
     }

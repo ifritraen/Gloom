@@ -10,13 +10,13 @@ import androidx.compose.material.icons.outlined.PeopleAlt
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.FollowRecommendationFeedItemFragment
+import dev.materii.gloom.shared.R
 
 @Composable
 fun RecommendedFollowUserItem(
@@ -39,7 +39,7 @@ fun RecommendedFollowUserItem(
             iconVector = Icons.Outlined.PeopleAlt,
             text = buildAnnotatedString {
                 withStyle(SpanStyle(color = MaterialTheme.colorScheme.onSurface.copy(0.7f))) {
-                    append(stringResource(Res.strings.recommended))
+                    append(stringResource(R.string.recommended))
                 }
             },
             badgeIcon = Icons.Filled.AutoAwesome

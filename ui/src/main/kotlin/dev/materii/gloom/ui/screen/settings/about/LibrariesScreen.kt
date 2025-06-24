@@ -10,10 +10,10 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import cafe.adriel.voyager.core.screen.Screen
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.LibraryManager
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.ThinDivider
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.settings.component.about.LibraryItem
@@ -52,7 +52,7 @@ class LibrariesScreen: Screen {
         scrollBehavior: TopAppBarScrollBehavior
     ) {
         LargeToolbar(
-            title = stringResource(Res.strings.settings_libraries),
+            title = stringResource(R.string.settings_libraries),
             scrollBehavior = scrollBehavior
         )
     }

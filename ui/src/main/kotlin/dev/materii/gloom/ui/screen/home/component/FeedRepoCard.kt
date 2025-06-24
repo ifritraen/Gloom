@@ -12,20 +12,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import coil3.compose.AsyncImage
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.FeedRepository
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.LabeledIcon
 import dev.materii.gloom.ui.screen.repo.RepoScreen
 import dev.materii.gloom.ui.theme.gloomColorScheme
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
 import dev.materii.gloom.ui.util.parsedColor
 import dev.materii.gloom.util.NumberFormatter
-import dev.materii.gloom.util.pluralStringResource
 
 @Composable
 fun FeedRepoCard(
@@ -102,7 +102,7 @@ fun FeedRepoCard(
             LabeledIcon(
                 icon = Icons.Outlined.Person,
                 label = pluralStringResource(
-                    res = Res.plurals.noun_contributors,
+                    id = R.plurals.noun_contributors,
                     count = repo.contributorsCount,
                     NumberFormatter.compact(repo.contributorsCount)
                 )
@@ -121,8 +121,8 @@ fun FeedRepoCard(
                 )
                 Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
                 Text(
-                    if (viewerHasStarred) stringResource(Res.strings.action_unstar) else stringResource(
-                        Res.strings.action_star
+                    if (viewerHasStarred) stringResource(R.string.action_unstar) else stringResource(
+                        R.string.action_star
                     )
                 )
             }

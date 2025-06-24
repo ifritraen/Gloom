@@ -39,7 +39,7 @@
     <string name="app_icon_main_description">The default Gloom icon.</string>
 
     <string name="app_icon_sky">Sky</string>
-    <string name="app_icon_sky_description">Huh... That's an interesting cloud...</string>
+    <string name="app_icon_sky_description">Huh… That\'s an interesting cloud…</string>
 
     <string name="app_icon_light">Light</string>
     <string name="app_icon_light_description">The original, but light.</string>

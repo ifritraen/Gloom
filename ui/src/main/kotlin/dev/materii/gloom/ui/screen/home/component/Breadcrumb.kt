@@ -9,13 +9,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.*
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.screen.profile.ProfileScreen
 import dev.materii.gloom.ui.screen.repo.RepoScreen
@@ -65,7 +65,7 @@ fun Breadcrumb(
                     .size(20.dp)
                     .clickable { nav.navigate(ProfileScreen(username)) },
                 url = avatarUrl,
-                contentDescription = stringResource(Res.strings.noun_users_avatar, username),
+                contentDescription = stringResource(R.string.noun_users_avatar, username),
                 type = userType,
             )
         }

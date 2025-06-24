@@ -10,6 +10,7 @@ fun managerModule() = module {
     singleOf(::DialogManager)
     singleOf(::DownloadManager)
     singleOf(::LibraryManager)
+    singleOf(::PreferenceManager)
     singleOf(::ShareManager)
     singleOf(::ToastManager)
 

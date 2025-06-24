@@ -16,14 +16,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.Account
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.BadgedItem
 
@@ -58,7 +58,7 @@ fun AccountItem(
             Avatar(
                 url = account.avatarUrl,
                 contentDescription = stringResource(
-                    Res.strings.noun_users_avatar,
+                    R.string.noun_users_avatar,
                     account.displayName ?: account.username
                 ),
                 modifier = Modifier.size(45.dp)
@@ -104,7 +104,7 @@ fun AccountItem(
                     usernameSubtitle(false)
                 }
                 account.baseUrl?.let { baseUrl ->
-                    val enterpriseCD = stringResource(Res.strings.cd_enterprise_domain, baseUrl)
+                    val enterpriseCD = stringResource(R.string.cd_enterprise_domain, baseUrl)
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(5.dp),

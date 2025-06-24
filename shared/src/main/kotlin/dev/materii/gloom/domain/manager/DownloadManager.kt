@@ -94,7 +94,8 @@ class DownloadManager(
                 }
             }
 
-            @SuppressLint("UnspecifiedRegisterReceiverFlag") if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            @SuppressLint("UnspecifiedRegisterReceiverFlag")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 context.registerReceiver(
                     receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE), Context.RECEIVER_EXPORTED
                 )

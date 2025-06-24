@@ -18,15 +18,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.ShareManager
 import dev.materii.gloom.gql.fragment.RepoFile
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.BackButton
 import dev.materii.gloom.ui.component.DownloadButton
 import dev.materii.gloom.ui.component.ErrorMessage
@@ -71,7 +72,7 @@ class FileViewerScreen(
             ) {
                 when (viewModel.fileHasError) {
                     true -> ErrorMessage(
-                        message = stringResource(Res.strings.msg_file_load_error),
+                        message = stringResource(R.string.msg_file_load_error),
                         onRetryClick = viewModel::refresh,
                         modifier = Modifier
                             .align(Alignment.Center)
@@ -150,9 +151,9 @@ class FileViewerScreen(
                 }
             ) {
                 val (icon, contentDescription) = if (!viewModel.showRawMarkdown) {
-                    Icons.Outlined.Description to Res.strings.action_view_raw
+                    Icons.Outlined.Description to R.string.action_view_raw
                 } else {
-                    Icons.Outlined.FormatColorText to Res.strings.action_view_markdown
+                    Icons.Outlined.FormatColorText to R.string.action_view_markdown
                 }
 
                 Icon(
@@ -177,7 +178,7 @@ class FileViewerScreen(
             ) {
                 Icon(
                     imageVector = Icons.Outlined.ContentCopy,
-                    contentDescription = stringResource(Res.strings.action_copy)
+                    contentDescription = stringResource(R.string.action_copy)
                 )
             }
         }
@@ -187,7 +188,7 @@ class FileViewerScreen(
         ) {
             Icon(
                 imageVector = Icons.Filled.Share,
-                contentDescription = stringResource(Res.strings.action_share)
+                contentDescription = stringResource(R.string.action_share)
             )
         }
     }
@@ -202,8 +203,8 @@ class FileViewerScreen(
     ) {
         val text = when {
             viewModel.selectedLines == null -> path.split("/").lastOrNull() ?: "File"
-            else -> stringResource(
-                Res.plurals.plural_lines_selected,
+            else -> pluralStringResource(
+                R.plurals.plural_lines_selected,
                 viewModel.selectedLines!!.count(),
                 viewModel.selectedLines!!.first,
                 viewModel.selectedLines!!.last

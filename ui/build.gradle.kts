@@ -52,7 +52,4 @@ dependencies {
     implementation(libs.multiplatform.paging)
     implementation(libs.multiplatform.paging.compose)
     implementation(libs.zoomable)
-
-    // Needed for shared module resources to work
-    implementation(libs.moko.resources.compose)
 }

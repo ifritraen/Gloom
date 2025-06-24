@@ -1,5 +1,6 @@
 package dev.materii.gloom.ui.screen.list.base
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,14 +12,13 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
 import cafe.adriel.voyager.core.screen.Screen
 import com.apollographql.apollo.api.Query
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.stringResource
 import dev.materii.gloom.ui.component.ThinDivider
 import dev.materii.gloom.ui.component.toolbar.LargeToolbar
 import dev.materii.gloom.ui.screen.list.viewmodel.BaseListViewModel
@@ -28,7 +28,8 @@ abstract class BaseListScreen<I: Any, D: Query.Data?, VM: BaseListViewModel<I, D
     @get:Composable
     abstract val viewModel: VM
 
-    abstract val titleRes: StringResource
+    @get:StringRes
+    abstract val titleRes: Int
 
     @Composable
     abstract fun Item(item: I)

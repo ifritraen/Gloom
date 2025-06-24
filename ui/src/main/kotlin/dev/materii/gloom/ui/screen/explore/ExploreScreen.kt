@@ -13,14 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.screen.explore.component.TrendingFeedFooter
 import dev.materii.gloom.ui.screen.explore.component.TrendingFeedHeader
 import dev.materii.gloom.ui.screen.explore.component.TrendingRepoItem
@@ -37,7 +37,7 @@ class ExploreScreen: Tab {
             val selected = navigator.current == this
             return TabOptions(
                 0u,
-                stringResource(Res.strings.navigation_explore),
+                stringResource(R.string.navigation_explore),
                 rememberVectorPainter(if (selected) Icons.Filled.Explore else Icons.Outlined.Explore)
             )
         }

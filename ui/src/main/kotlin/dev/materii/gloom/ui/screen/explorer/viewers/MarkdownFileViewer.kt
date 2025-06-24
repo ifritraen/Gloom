@@ -7,11 +7,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.RawMarkdownFile
 import dev.materii.gloom.gql.fragment.RepoFile
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.ErrorMessage
 import dev.materii.gloom.ui.widget.markdown.Markdown
 
@@ -30,7 +30,7 @@ fun MarkdownFileViewer(
         showRaw -> {
             if (rawHasError) {
                 ErrorMessage(
-                    message = stringResource(Res.strings.msg_raw_markdown_fail),
+                    message = stringResource(R.string.msg_raw_markdown_fail),
                 )
             } else {
                 rawFile?.contentRaw?.let { raw ->

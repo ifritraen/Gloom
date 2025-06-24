@@ -26,6 +26,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.UriHandler
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -37,16 +40,13 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import coil3.compose.AsyncImage
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.pluralStringResource
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.api.dto.user.User
 import dev.materii.gloom.api.model.ModelRepo
 import dev.materii.gloom.api.model.ModelStatus
 import dev.materii.gloom.api.model.ModelUser
 import dev.materii.gloom.domain.manager.ShareManager
 import dev.materii.gloom.gql.type.SocialAccountProvider
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.BackButton
 import dev.materii.gloom.ui.component.BadgedItem
@@ -64,6 +64,7 @@ import dev.materii.gloom.ui.screen.settings.SettingsScreen
 import dev.materii.gloom.ui.util.NavigationUtil.navigate
 import dev.materii.gloom.ui.widget.alert.LocalAlertController
 import dev.materii.gloom.ui.widget.markdown.ReadMeCard
+import dev.materii.gloom.util.Constants
 import dev.materii.gloom.util.EmojiUtil
 import dev.materii.gloom.util.NumberFormatter
 import kotlinx.collections.immutable.ImmutableList
@@ -107,7 +108,7 @@ open class ProfileScreen(
                         user.readme?.let { readme ->
                             Box(modifier = Modifier.padding(horizontal = 16.dp)) {
                                 val nav = LocalNavigator.currentOrThrow
-                                val repository = viewModel.user!!.username ?: "ghost"
+                                val repository = viewModel.user!!.username ?: Constants.DEFAULT_USERNAME
 
                                 ReadMeCard(
                                     text = readme,
@@ -172,7 +173,7 @@ open class ProfileScreen(
             actions = {
                 if (!viewModel.user?.username.isNullOrBlank()) {
                     IconButton(onClick = { shareManager.shareText("https://github.com/${viewModel.user!!.username}") }) {
-                        Icon(Icons.Filled.Share, stringResource(Res.strings.action_share))
+                        Icon(Icons.Filled.Share, stringResource(R.string.action_share))
                     }
                 }
 
@@ -182,7 +183,7 @@ open class ProfileScreen(
                     IconButton(onClick = { nav?.navigate(SettingsScreen()) }) {
                         Icon(
                             Icons.Outlined.Settings,
-                            stringResource(Res.strings.navigation_settings)
+                            stringResource(R.string.navigation_settings)
                         )
                     }
                 }
@@ -234,7 +235,7 @@ open class ProfileScreen(
 
             if (user.isFollowingYou) {
                 Text(
-                    text = stringResource(Res.strings.label_follows_you),
+                    text = stringResource(R.string.label_follows_you),
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier
@@ -290,18 +291,18 @@ open class ProfileScreen(
 
                     user.socials.forEach { social ->
                         val (icon, cdRes) = when (social.provider) {
-                            SocialAccountProvider.TWITTER   -> Icons.Social.Twitter to Res.strings.cd_twitter
-                            SocialAccountProvider.YOUTUBE   -> Icons.Social.YouTube to Res.strings.cd_youtube
-                            SocialAccountProvider.MASTODON  -> Icons.Social.Mastodon to Res.strings.cd_mastodon
-                            SocialAccountProvider.HOMETOWN  -> Icons.Social.Hometown to Res.strings.cd_hometown
-                            SocialAccountProvider.FACEBOOK  -> Icons.Social.Facebook to Res.strings.cd_facebook
-                            SocialAccountProvider.INSTAGRAM -> Icons.Social.Instagram to Res.strings.cd_instagram
-                            SocialAccountProvider.LINKEDIN  -> Icons.Social.LinkedIn to Res.strings.cd_linkedin
-                            SocialAccountProvider.REDDIT    -> Icons.Social.Reddit to Res.strings.cd_reddit
-                            SocialAccountProvider.TWITCH    -> Icons.Social.Twitch to Res.strings.cd_twitch
-                            SocialAccountProvider.BLUESKY   -> Icons.Social.Bluesky to Res.strings.cd_bluesky
-                            SocialAccountProvider.NPM       -> Icons.Social.NPM to Res.strings.cd_npm
-                            else                            -> Icons.Outlined.Link to Res.strings.cd_link
+                            SocialAccountProvider.TWITTER -> Icons.Social.Twitter to R.string.cd_twitter
+                            SocialAccountProvider.YOUTUBE -> Icons.Social.YouTube to R.string.cd_youtube
+                            SocialAccountProvider.MASTODON -> Icons.Social.Mastodon to R.string.cd_mastodon
+                            SocialAccountProvider.HOMETOWN -> Icons.Social.Hometown to R.string.cd_hometown
+                            SocialAccountProvider.FACEBOOK -> Icons.Social.Facebook to R.string.cd_facebook
+                            SocialAccountProvider.INSTAGRAM -> Icons.Social.Instagram to R.string.cd_instagram
+                            SocialAccountProvider.LINKEDIN -> Icons.Social.LinkedIn to R.string.cd_linkedin
+                            SocialAccountProvider.REDDIT -> Icons.Social.Reddit to R.string.cd_reddit
+                            SocialAccountProvider.TWITCH -> Icons.Social.Twitch to R.string.cd_twitch
+                            SocialAccountProvider.BLUESKY -> Icons.Social.Bluesky to R.string.cd_bluesky
+                            SocialAccountProvider.NPM -> Icons.Social.NPM to R.string.cd_npm
+                            else -> Icons.Outlined.Link to R.string.cd_link
                         }
                         val socialName = remember {
                             if (social.provider == SocialAccountProvider.GENERIC) {
@@ -345,7 +346,7 @@ open class ProfileScreen(
                         }) {
                             Text(
                                 pluralStringResource(
-                                    Res.plurals.followers,
+                                    R.plurals.followers,
                                     (user.followers ?: 0).toInt(),
                                     NumberFormatter.compact((user.followers ?: 0).toInt())
                                 )
@@ -360,7 +361,7 @@ open class ProfileScreen(
                         }) {
                             Text(
                                 pluralStringResource(
-                                    Res.plurals.following,
+                                    R.plurals.following,
                                     (user.following ?: 0).toInt(),
                                     NumberFormatter.compact((user.following ?: 0).toInt())
                                 )
@@ -376,11 +377,11 @@ open class ProfileScreen(
     private fun ProfileAvatar(user: ModelUser) {
         val alertController = LocalAlertController.current
         val (badge, msg) =
-            if (user.isSupporter) painterResource(Res.images.img_badge_sponsor) to stringResource(
-                Res.strings.badge_supporter
+            if (user.isSupporter) painterResource(R.drawable.img_badge_sponsor) to stringResource(
+                R.string.badge_supporter
             )
-            else if (user.id == dev.materii.gloom.util.Constants.DEV_USER_ID) painterResource(Res.images.img_badge_dev) to stringResource(
-                Res.strings.badge_supporter
+            else if (user.id == dev.materii.gloom.util.Constants.DEV_USER_ID) painterResource(R.drawable.img_badge_dev) to stringResource(
+                R.string.badge_supporter
             )
             else null to null
 
@@ -399,7 +400,7 @@ open class ProfileScreen(
             Avatar(
                 url = user.avatar,
                 contentDescription = stringResource(
-                    Res.strings.noun_users_avatar,
+                    R.string.noun_users_avatar,
                     user.displayName ?: "ghost"
                 ),
                 type = user.type,
@@ -490,7 +491,7 @@ open class ProfileScreen(
             ElevatedCard {
                 Column {
                     StatItem(
-                        label = stringResource(Res.strings.title_repos),
+                        label = stringResource(R.string.title_repos),
                         count = repoCount,
                         icon = Icons.Outlined.Book
                     ) {
@@ -498,14 +499,14 @@ open class ProfileScreen(
                     }
                     if (!isOrg) {
                         StatItem(
-                            label = stringResource(Res.strings.title_orgs),
+                            label = stringResource(R.string.title_orgs),
                             count = orgCount,
                             icon = Icons.Outlined.Business
                         ) {
                             username?.let { OrgsListScreen(it) }?.let { nav?.navigate(it) }
                         }
                         StatItem(
-                            label = stringResource(Res.strings.title_starred),
+                            label = stringResource(R.string.title_starred),
                             count = starCount,
                             icon = Icons.Outlined.Star
                         ) {
@@ -514,7 +515,7 @@ open class ProfileScreen(
                     }
                     if (sponsoringCount > 0) {
                         StatItem(
-                            label = stringResource(Res.strings.title_sponsoring),
+                            label = stringResource(R.string.title_sponsoring),
                             count = sponsoringCount,
                             icon = Icons.Outlined.FavoriteBorder
                         ) {
@@ -567,7 +568,7 @@ open class ProfileScreen(
             modifier = Modifier.padding(vertical = 8.dp)
         ) {
             Text(
-                stringResource(Res.strings.section_title_pinned),
+                stringResource(R.string.section_title_pinned),
                 style = MaterialTheme.typography.labelLarge,
                 fontSize = 15.sp,
                 modifier = Modifier.padding(horizontal = 18.dp)
@@ -595,11 +596,11 @@ open class ProfileScreen(
     ) {
         val (icon, alt) = if (viewModel.user?.isFollowing == true)
             Icons.Filled.HowToReg to stringResource(
-                Res.strings.action_unfollow_user,
+                R.string.action_unfollow_user,
                 viewModel.user?.username ?: "ghost"
             )
         else Icons.Outlined.PersonAddAlt to stringResource(
-            Res.strings.action_follow_user,
+            R.string.action_follow_user,
             viewModel.user?.username ?: "ghost"
         )
 

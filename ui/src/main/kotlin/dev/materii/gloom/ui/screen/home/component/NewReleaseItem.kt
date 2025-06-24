@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -25,9 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.NewReleaseItemFragment
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.ThinDivider
 import dev.materii.gloom.ui.icon.Custom
 import dev.materii.gloom.ui.icon.custom.Commit
@@ -60,11 +60,11 @@ fun NewReleaseItem(
     ) {
         FeedActor(
             iconUrl = actor.avatarUrl,
-            iconDescription = stringResource(Res.strings.noun_users_avatar, actor.login),
+            iconDescription = stringResource(R.string.noun_users_avatar, actor.login),
             badgeIcon = Icons.Filled.LocalOffer,
-            badgeIconDescription = stringResource(Res.strings.noun_release),
+            badgeIconDescription = stringResource(R.string.noun_release),
             onIconClick = { navigator.navigate(ProfileScreen(actor.login)) },
-            text = annotatingStringResource(res = Res.strings.published_release, actor.login) {
+            text = annotatingStringResource(res = R.string.published_release, actor.login) {
                 when (it) {
                     "name" -> SpanStyle(color = MaterialTheme.colorScheme.onSurface)
                     "text" -> SpanStyle(color = MaterialTheme.colorScheme.onSurface.copy(0.7f))
@@ -123,7 +123,7 @@ fun ReleaseCard(
 
                 if (release.isLatest) {
                     Text(
-                        text = stringResource(Res.strings.label_latest),
+                        text = stringResource(R.string.label_latest),
                         style = MaterialTheme.typography.labelSmall,
                         fontSize = 10.sp,
                         color = DarkGreen,
@@ -159,13 +159,13 @@ fun ReleaseCard(
             ) {
                 ReleaseDetail(
                     icon = Icons.Outlined.LocalOffer,
-                    iconDescription = stringResource(Res.strings.noun_tag),
+                    iconDescription = stringResource(R.string.noun_tag),
                     text = release.tagName
                 )
                 if (release.tagCommit?.abbreviatedOid?.isNotBlank() == true) {
                     ReleaseDetail(
                         icon = Icons.Custom.Commit,
-                        iconDescription = stringResource(Res.strings.noun_commit),
+                        iconDescription = stringResource(R.string.noun_commit),
                         text = release.tagCommit!!.abbreviatedOid
                     )
                 }
@@ -187,7 +187,7 @@ fun ReleaseCard(
                     .padding(vertical = 3.dp, horizontal = 5.dp)
             ) {
                 Text(
-                    stringResource(Res.strings.action_view_details),
+                    stringResource(R.string.action_view_details),
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 1

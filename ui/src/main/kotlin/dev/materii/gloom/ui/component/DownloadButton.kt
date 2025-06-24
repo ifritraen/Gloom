@@ -7,10 +7,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.benasher44.uuid.uuid4
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.domain.manager.DownloadManager
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.widget.alert.LocalAlertController
 import org.koin.compose.koinInject
 
@@ -23,8 +23,8 @@ fun DownloadButton(
 ) {
     val downloadManager: DownloadManager = koinInject()
     val alertController = LocalAlertController.current
-    val downloadingText = stringResource(Res.strings.msg_downloading_file, fileName)
-    val downloadedText = stringResource(Res.strings.msg_download_completed)
+    val downloadingText = stringResource(R.string.msg_downloading_file, fileName)
+    val downloadedText = stringResource(R.string.msg_download_completed)
 
     IconButton(
         onClick = {
@@ -38,7 +38,7 @@ fun DownloadButton(
     ) {
         Icon(
             imageVector = Icons.Filled.Download,
-            contentDescription = stringResource(Res.strings.action_download)
+            contentDescription = stringResource(R.string.action_download)
         )
     }
 }

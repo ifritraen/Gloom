@@ -5,8 +5,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import androidx.compose.ui.res.stringResource
+import dev.materii.gloom.shared.R
 
 @Composable
 fun SignOutDialog(
@@ -21,18 +21,18 @@ fun SignOutDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(Res.strings.settings_sign_out_header)) },
-        text = { Text(stringResource(Res.strings.settings_sign_out_text)) },
+        title = { Text(stringResource(R.string.settings_sign_out_header)) },
+        text = { Text(stringResource(R.string.settings_sign_out_text)) },
         confirmButton = {
             Button(
                 onClick = onSignOutClick
             ) {
-                Text(stringResource(Res.strings.action_sign_out))
+                Text(stringResource(R.string.action_sign_out))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(text = stringResource(Res.strings.dismiss_nevermind))
+                Text(text = stringResource(R.string.dismiss_nevermind))
             }
         }
     )

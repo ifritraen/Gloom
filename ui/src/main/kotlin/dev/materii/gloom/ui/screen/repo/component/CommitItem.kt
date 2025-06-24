@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -17,9 +18,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.CommitDetails
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.AvatarPile
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.component.StatusIcon
@@ -98,9 +98,9 @@ fun CommitItem(
             Text(
                 text = annotatingStringResource(
                     if (isUniqueCommiter) {
-                        Res.strings.commit_authored_by_different
+                        R.string.commit_authored_by_different
                     } else {
-                        Res.strings.commit_authored_by_committer
+                        R.string.commit_authored_by_committer
                     },
                     author.name ?: author.user?.login ?: "ghost",
                     committer.name ?: committer.user?.login ?: "ghost"
@@ -146,7 +146,7 @@ fun CommitItem(
                 var signatureDetailsOpened by remember { mutableStateOf(false) }
 
                 Label(
-                    text = stringResource(Res.strings.label_verified),
+                    text = stringResource(R.string.label_verified),
                     textColor = MaterialTheme.gloomColorScheme.statusGreen,
                     modifier = Modifier.clickable {
                         signatureDetailsOpened = true

@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -21,9 +22,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
 import dev.materii.gloom.gql.fragment.ReleaseItem
+import dev.materii.gloom.shared.R
 import dev.materii.gloom.ui.component.Avatar
 import dev.materii.gloom.ui.component.Label
 import dev.materii.gloom.ui.component.ThinDivider
@@ -68,7 +68,7 @@ fun LatestReleaseItem(
                 )
 
                 Label(
-                    text = stringResource(Res.strings.label_latest),
+                    text = stringResource(R.string.label_latest),
                     textColor = DarkGreen
                 )
             }
@@ -86,7 +86,7 @@ fun LatestReleaseItem(
 
                     Text(
                         text = annotatingStringResource(
-                            Res.strings.msg_release_author,
+                            R.string.msg_release_author,
                             author.login,
                             release.createdAt.format()
                         ) {

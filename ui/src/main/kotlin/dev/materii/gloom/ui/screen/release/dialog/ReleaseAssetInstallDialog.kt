@@ -8,11 +8,11 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
-import dev.materii.gloom.Res
+import dev.materii.gloom.shared.R
 
 @Composable
 fun ReleaseAssetInstallDialog(
@@ -28,12 +28,12 @@ fun ReleaseAssetInstallDialog(
         onDismissRequest = { onClose(null) },
         confirmButton = {
             FilledTonalButton(onClick = { onConfirm(checked) }) {
-                Text(stringResource(Res.strings.action_install))
+                Text(stringResource(R.string.action_install))
             }
         },
         dismissButton = {
             TextButton(onClick = { onClose(checked) }) {
-                Text(stringResource(Res.strings.dismiss_no_thanks))
+                Text(stringResource(R.string.dismiss_no_thanks))
             }
         },
         icon = {
@@ -45,7 +45,7 @@ fun ReleaseAssetInstallDialog(
         },
         title = {
             Text(
-                text = stringResource(Res.strings.title_install_app),
+                text = stringResource(R.string.title_install_app),
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -55,7 +55,7 @@ fun ReleaseAssetInstallDialog(
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 Text(
-                    text = stringResource(Res.strings.msg_install_dialog_body, fileName),
+                    text = stringResource(R.string.msg_install_dialog_body, fileName),
                     textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -67,7 +67,7 @@ fun ReleaseAssetInstallDialog(
                         .fillMaxWidth()
                 ) {
                     Checkbox(checked = checked, onCheckedChange = { checked = it })
-                    Text(stringResource(Res.strings.label_dont_show_again))
+                    Text(stringResource(R.string.label_dont_show_again))
                 }
             }
         }
