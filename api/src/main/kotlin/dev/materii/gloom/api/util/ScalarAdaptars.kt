@@ -8,6 +8,7 @@ import com.apollographql.apollo.api.json.JsonWriter
 import kotlinx.datetime.*
 
 val DateAdapter = object: Adapter<Instant> {
+
     override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters): Instant {
         val dateString = StringAdapter.fromJson(reader, customScalarAdapters)
         val (year, month, day) = dateString.split("-")
@@ -32,4 +33,5 @@ val DateAdapter = object: Adapter<Instant> {
             "${ldt.year}-${ldt.monthNumber}-${ldt.dayOfMonth}"
         )
     }
+
 }

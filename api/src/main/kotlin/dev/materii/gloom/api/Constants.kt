@@ -1,6 +1,9 @@
+@file:Suppress("FunctionNaming")
+
 package dev.materii.gloom.api
 
 import dev.materii.gloom.gql.type.ReactionContent
+import dev.materii.gloom.shared.BuildConfig
 import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi
 
