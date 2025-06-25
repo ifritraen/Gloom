@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_sign_out">登出</string>
+    <string name="settings_sign_out_header">登出？</string>
+    <string name="settings_sign_out_text">您確定要登出嗎？您隨時可以稍後重新登入。</string>
+    <!-- Appearance -->
+    <string name="settings_appearance">外觀</string>
+    <string name="settings_appearance_description">主題，程式碼風格</string>
+    <string name="appearance_theme">主題</string>
+    <string name="appearance_monet">動態主題</string>
+    <string name="appearance_monet_description">適用於 Android 12 以上版本</string>
+    <string name="theme_system">跟隨系統</string>
+    <string name="theme_light">明亮模式</string>
+    <string name="theme_dark">黑暗模式</string>
+    <string name="appearance_av_shape">Avatar Shape</string>
+    <string name="appearance_av_radius">半徑：</string>
+    <string name="appearance_av_radius_percent">%1$d%</string>
+    <string name="appearance_av_shape_circle">圓形</string>
+    <string name="appearance_av_shape_roundrect">圓角方形</string>
+    <string name="appearance_av_shape_squircle">圓角正方形</string>
+    <string name="action_expand_av_shape">View avatar shape options</string>
+    <string name="action_collapse_av_shape">Close avatar shape options</string>
+    <!--            -->
+    <!-- App Icons -->
+    <string name="settings_app_icon">應用程式圖示</string>
+    <string name="settings_app_icon_description">為 Gloom 選擇一個圖示</string>
+    <string name="app_icon_collection_classic">經典</string>
+    <string name="app_icon_main">預設</string>
+    <string name="app_icon_main_description">預設 Gloom 圖示。</string>
+    <string name="app_icon_sky">天空</string>
+    <string name="app_icon_sky_description">嗯...那是一朵有趣的雲朵...</string>
+    <string name="app_icon_light">光明</string>
+    <string name="app_icon_light_description">原版，但很淺。</string>
+    <string name="app_icon_collection_stylized">風格化</string>
+    <string name="app_icon_blueprint">藍圖</string>
+    <string name="app_icon_blueprint_description">正在構建一些偉大的東西！</string>
+    <string name="app_icon_collection_pride">驕傲</string>
+    <string name="app_icon_pride">LGBT</string>
+    <string name="app_icon_pride_description">🏳️‍🌈</string>
+    <string name="app_icon_trans">跨性別</string>
+    <string name="app_icon_trans_description">🏳️‍⚧️</string>
+    <string name="app_icon_trans_inverted">反轉跨性別旗幟配色</string>
+    <string name="app_icon_trans_inverted_description">🏳️‍⚧️但顏色對調</string>
+    <string name="app_icon_collection_catppuccin">卡布奇諾風格</string>
+    <string name="app_icon_mocha">摩卡</string>
+    <string name="app_icon_mocha_description">一杯豐富的飲品，為你的日子開端！</string>
+    <string name="app_icon_macchiato">瑪奇朵</string>
+    <string name="app_icon_macchiato_description">喜歡輕盈一點的選擇嗎？</string>
+    <string name="app_icon_frappe">法式冰沙</string>
+    <string name="app_icon_frappe_description">天氣一定很熱吧？</string>
+    <string name="app_icon_latte">拿鐵</string>
+    <string name="app_icon_latte_description">你比較喜歡杏仁奶還是豆漿？</string>
+    <string name="app_icon_collection_holiday25">Holidays 2025</string>
+    <string name="app_icon_valentines25">Valentines</string>
+    <string name="app_icon_valentines25_description">Love is in the air?</string>
+    <!--           -->
+    <!-- Accounts -->
+    <string name="settings_accounts">帳戶</string>
+    <string name="settings_accounts_description">新增或切換帳戶</string>
+    <string name="action_add_account">新增帳戶</string>
+    <string name="action_sign_out_all">登出所有帳戶</string>
+    <string name="cd_enterprise_domain">企業域名：%1$s</string>
+    <!--          -->
+    <!-- Development -->
+    <string name="settings_development">開發</string>
+    <string name="settings_development_description">調試並測試新功能</string>
+    <string name="dev_alert_testing">警報測試</string>
+    <string name="dev_alert_testing_description">創建自訂警報以供測試使用</string>
+    <string name="dev_alert_title">標題</string>
+    <string name="dev_alert_message">訊息</string>
+    <string name="dev_alert_show_icon">顯示圖示</string>
+    <string name="dev_alert_duration">持續時間</string>
+    <string name="dev_alert_action_show_alert">顯示警報</string>
+    <string name="dev_alert_action_fill_queue">填充佇列</string>
+    <!--             -->
+    <!-- About -->
+    <string name="settings_about">關於</string>
+    <string name="settings_libraries">庫</string>
+    <string name="settings_libraries_description">用來開發 Gloom 的庫</string>
+    <string name="cd_library_author">作者：%1$s</string>
+    <string name="cd_library_license">許可證：%1$s</string>
+    <string name="label_open_source">開源</string>
+    <string name="label_closed_source">閉源</string>
+    <!--       -->
+</resources>

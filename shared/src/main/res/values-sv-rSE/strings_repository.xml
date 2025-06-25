@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_star">Star</string>
+    <string name="action_unstar">Unstar</string>
+    <string name="placeholder_empty_repo">Empty Repository</string>
+    <string name="cd_forked_repo">Forked Repository</string>
+    <string name="label_repo_archived">Archived by owner</string>
+    <!-- Details -->
+    <string name="repo_tab_details">Detaljer</string>
+    <string name="action_show_license_details">Visa licensdetaljer</string>
+    <string name="action_hide_license_details">Dölj licensdetaljer</string>
+    <string name="title_license">Licens</string>
+    <string name="label_permissions">Behörigheter</string>
+    <string name="label_limitations">Begränsningar</string>
+    <string name="label_conditions">Villkor</string>
+    <string name="label_forked_from">Forked from %s</string>
+    <!--         -->
+    <!-- Code -->
+    <string name="repo_tab_code">Kod</string>
+    <string name="commits">Commits</string>
+    <!--      -->
+    <!-- Commits -->
+    <string name="label_verified">Verified</string>
+    <string name="label_verified_on">Verified on %1$s</string>
+    <string name="label_gpg_key_id">GPG Key ID: %1$s</string>
+    <string name="label_ssh_fingerprint">SSH Fingerprint: %1$s</string>
+    <string name="commit_authored_by_committer">§author§%1$s§ authored</string>
+    <string name="commit_authored_by_different">§author§%1$s§ authored and §committer§%2$s§ committed</string>
+    <string name="title_commit_verified">This Commit is Verified</string>
+    <string name="commit_signature_reason_github">This commit was created on GitHub.com and signed with GitHub\'s verified signature.
+    </string>
+    <string name="commit_signature_reason_user">This commit was signed with the committer\'s verified signature.</string>
+    <!--         -->
+    <!-- Issues -->
+    <string name="repo_tab_issues">Issues</string>
+    <string name="cd_issue_title_opened">Issue number %1$d with title \"%2$s\"</string>
+    <string name="cd_issue_title_completed">Issue number %1$d with title \"%2$s\" marked as completed</string>
+    <string name="cd_issue_title_not_planned">Issue number %1$d with title \"%2$s\" marked as not planned</string>
+    <!--        -->
+    <!-- Pull Requests -->
+    <string name="repo_tab_prs">Pull Requests</string>
+    <string name="cd_pr_title_opened">Opened pull request number %1$d with title \"%2$s\"</string>
+    <string name="cd_pr_title_merged">Merged pull request number %1$d with title \"%2$s\"</string>
+    <string name="cd_pr_title_closed">Closed pull request number %1$d with title \"%2$s\"</string>
+    <string name="cd_pr_title_draft">Draft pull request number %1$d with title \"%2$s\"</string>
+    <string name="label_checks_failed">Checks failed</string>
+    <!--               -->
+    <!-- Issue or PR -->
+    <string name="cd_label_comments">%1$d kommentarer</string>
+    <string name="msg_issue_or_pr_author">#%1$d av %2$s</string>
+    <!--             -->
+    <!-- Releases -->
+    <string name="repo_tab_releases">Releases</string>
+    <string name="label_all_releases">All releases</string>
+    <!--          -->
+</resources>

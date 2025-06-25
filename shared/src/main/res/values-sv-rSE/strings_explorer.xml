@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_reset_zoom">Återställ zoom</string>
+    <string name="action_view_raw">Visa rå</string>
+    <string name="action_view_markdown">Visa som markdown</string>
+    <string name="msg_file_load_error">Kunde inte ladda denna fil</string>
+    <string name="msg_raw_markdown_fail">Could not load raw markdown</string>
+</resources>

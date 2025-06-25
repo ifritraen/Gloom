@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_github_sign_in">Увійти за допомогою GitHub</string>
+    <string name="label_choose_account">Оберіть акаунт</string>
+    <string name="label_or">або</string>
+    <string name="msg_welcome">Ласкаво просимо!</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="title_trending">Популярне</string>
+    <string name="label_trending_daily">Сьогодні</string>
+    <string name="label_trending_weekly">Цього тижня</string>
+    <string name="label_trending_monthly">Цього місяця</string>
+    <string name="label_stars_day">%1$s сьогодні</string>
+    <string name="label_stars_week">%1$s цього тижня</string>
+    <string name="label_stars_month">%1$s цього місяця</string>
+    <string name="msg_trending_footer_title">Ви дійшли до кінця!</string>
+    <string name="msg_trending_footer_description">Зайдіть пізніше, щоб побачити нові трендові репозиторії</string>
+</resources>

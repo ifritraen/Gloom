@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Root Tabs -->
+    <string name="navigation_explore">Обзор</string>
+    <string name="navigation_home">Главная</string>
+    <string name="navigation_inbox">Входящие</string>
+    <string name="navigation_profile">Профиль</string>
+    <string name="navigation_settings">Настройки</string>
+    <!--           -->
+    <!-- Generic Actions -->
+    <string name="action_back">Назад</string>
+    <string name="action_confirm">Подтвердить</string>
+    <string name="action_share">Поделиться</string>
+    <string name="action_expand">Показать больше</string>
+    <string name="action_collapse">Показать меньше</string>
+    <string name="action_edit">Редактировать</string>
+    <string name="action_stop_edit">Закончить редактирование</string>
+    <string name="action_try_again">Попробовать снова</string>
+    <string name="action_copy">Скопировать</string>
+    <!--                 -->
+    <!-- Dismiss Labels -->
+    <string name="dismiss_nevermind">Не сейчас</string>
+    <string name="dismiss_cancel">Отмена</string>
+    <string name="dismiss_no_thanks">Нет, спасибо</string>
+    <string name="dismiss_okay">Okay</string>
+    <!--                -->
+    <!-- Errors -->
+    <string name="error_release_load">Не удалось загрузить релиз</string>
+    <!--        -->
+    <!-- Titles -->
+    <string name="title_starred">Избранное</string>
+    <string name="title_orgs">Организации</string>
+    <string name="title_repos">Репозитории</string>
+    <string name="title_contributors">Участники</string>
+    <string name="title_sponsoring">Спонсорство</string>
+    <string name="title_followers">Подписчики</string>
+    <string name="title_following">Подписки</string>
+    <string name="title_forks">Forks</string>
+    <string name="title_commits">Commits</string>
+    <!--        -->
+    <!-- Entities -->
+    <string name="noun_repo">Репозиторий</string>
+    <string name="noun_release">Релиз</string>
+    <string name="noun_tag">Тег</string>
+    <string name="noun_user">User</string>
+    <string name="noun_org">Organization</string>
+    <string name="noun_other">Другое</string>
+    <string name="noun_commit">Коммит</string>
+    <string name="noun_license">Лицензия</string>
+    <string name="noun_users_avatar">Аватар %s</string>
+    <!--          -->
+    <!-- Issues and PRs -->
+    <string name="msg_issue_untitled">Замечание без заголовка</string>
+    <string name="msg_pr_untitled">Слияние кода без заголовка</string>
+    <string name="label_checks">Проверки</string>
+    <string name="label_reviews">Отзывы</string>
+    <!--                -->
+    <string name="label_dont_show_again">Больше не показывать</string>
+    <!-- Units -->
+    <string name="time_now">Только что</string>
+    <string name="time_since_second">%1$d сек</string>
+    <string name="time_since_minute">%1$d мин</string>
+    <string name="time_since_hour">%1$d ч</string>
+    <string name="time_since_day">%1$d д</string>
+    <string name="time_since_month">%1$d мес</string>
+    <string name="time_since_year">%1$d г</string>
+    <string name="file_size_bytes">%1$d Б</string>
+    <string name="file_size_kilobytes">%1$d КБ</string>
+    <string name="file_size_megabytes">%1$d МБ</string>
+    <string name="file_size_gigabytes">%1$d ГБ</string>
+    <!--       -->
+    <!-- Downloading -->
+    <string name="action_download">Скачать</string>
+    <string name="title_download_confirm">Подтвердить загрузку</string>
+    <string name="msg_download_dialog_body">Вы собираетесь загрузить %1$s (%2$s), уверены, что хотите это сделать?</string>
+    <string name="msg_downloading_file">Загрузка %1$s...</string>
+    <string name="msg_download_completed">Загрузка завершена</string>
+    <!--             -->
+    <!-- Installing -->
+    <string name="install_fail_generic">Не удалось установить: Неизвестная причина</string>
+    <string name="install_fail_blocked">Установка была заблокирована</string>
+    <string name="install_fail_invalid">Один или несколько пакетов были недействительны или повреждены</string>
+    <string name="install_fail_conflict">Конфликты с существующими приложениями, обычно из-за несовпадения подписей    </string>
+    <string name="install_fail_storage">Недостаточно памяти для установки</string>
+    <string name="install_fail_incompatible">Приложение несовместимо с данным устройством</string>
+    <string name="install_fail_timeout">Время ожидания установки истекло</string>
+    <string name="install_success">Приложение успешно установлено!</string>
+    <string name="install_cancelled">Установка отменена</string>
+    <!--            -->
+</resources>

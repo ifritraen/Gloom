@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Root Tabs -->
+    <string name="navigation_explore">Огляд</string>
+    <string name="navigation_home">Головна</string>
+    <string name="navigation_inbox">Вхідні</string>
+    <string name="navigation_profile">Профіль</string>
+    <string name="navigation_settings">Налаштування</string>
+    <!--           -->
+    <!-- Generic Actions -->
+    <string name="action_back">Назад</string>
+    <string name="action_confirm">Підтвердити</string>
+    <string name="action_share">Поділитись</string>
+    <string name="action_expand">Розгорнути</string>
+    <string name="action_collapse">Згорнути</string>
+    <string name="action_edit">Редагувати</string>
+    <string name="action_stop_edit">Завершити редагування</string>
+    <string name="action_try_again">Спробуйте ще раз</string>
+    <string name="action_copy">Копіювати</string>
+    <!--                 -->
+    <!-- Dismiss Labels -->
+    <string name="dismiss_nevermind">Неважливо</string>
+    <string name="dismiss_cancel">Скасувати</string>
+    <string name="dismiss_no_thanks">Ні, дякую</string>
+    <string name="dismiss_okay">Гаразд</string>
+    <!--                -->
+    <!-- Errors -->
+    <string name="error_release_load">Не вдалося завантажити реліз</string>
+    <!--        -->
+    <!-- Titles -->
+    <string name="title_starred">Обране</string>
+    <string name="title_orgs">Організації</string>
+    <string name="title_repos">Репозиторії</string>
+    <string name="title_contributors">Учасники</string>
+    <string name="title_sponsoring">Спонсорство</string>
+    <string name="title_followers">Підписники</string>
+    <string name="title_following">Підписки</string>
+    <string name="title_forks">Форків</string>
+    <string name="title_commits">Комітів</string>
+    <!--        -->
+    <!-- Entities -->
+    <string name="noun_repo">Репозиторій</string>
+    <string name="noun_release">Випуск</string>
+    <string name="noun_tag">Тег</string>
+    <string name="noun_user">Користувач</string>
+    <string name="noun_org">Організація</string>
+    <string name="noun_other">Інше</string>
+    <string name="noun_commit">Коміт</string>
+    <string name="noun_license">Ліцензія</string>
+    <string name="noun_users_avatar">Аватар %s</string>
+    <!--          -->
+    <!-- Issues and PRs -->
+    <string name="msg_issue_untitled">Задача без назви</string>
+    <string name="msg_pr_untitled">Запит на злиття без назви</string>
+    <string name="label_checks">Перевірки</string>
+    <string name="label_reviews">Відгуки</string>
+    <!--                -->
+    <string name="label_dont_show_again">Не показувати знову</string>
+    <!-- Units -->
+    <string name="time_now">Щойно</string>
+    <string name="time_since_second">%1$dсек</string>
+    <string name="time_since_minute">%1$dхв</string>
+    <string name="time_since_hour">%1$dгод</string>
+    <string name="time_since_day">%1$dд</string>
+    <string name="time_since_month">%1$dміс</string>
+    <string name="time_since_year">%1$dр</string>
+    <string name="file_size_bytes">%1$d Б</string>
+    <string name="file_size_kilobytes">%1$d КБ</string>
+    <string name="file_size_megabytes">%1$d МБ</string>
+    <string name="file_size_gigabytes">%1$d ГБ</string>
+    <!--       -->
+    <!-- Downloading -->
+    <string name="action_download">Завантажити</string>
+    <string name="title_download_confirm">Підтвердьте завантаження</string>
+    <string name="msg_download_dialog_body">Ви збираєтеся завантажити %1$s (%2$s). Ви впевнені?</string>
+    <string name="msg_downloading_file">Завантаження %1$s...</string>
+    <string name="msg_download_completed">Завантаження завершено</string>
+    <!--             -->
+    <!-- Installing -->
+    <string name="install_fail_generic">Не вдалося встановити: невідома причина</string>
+    <string name="install_fail_blocked">Встановлення було заблоковано</string>
+    <string name="install_fail_invalid">Один або кілька пакетів встановлення недійсні або пошкоджені</string>
+    <string name="install_fail_conflict">Конфлікт із наявною програмою (зазвичай через розбіжність підписів)    </string>
+    <string name="install_fail_storage">Недостатньо вільного місця для встановлення</string>
+    <string name="install_fail_incompatible">Програма несумісна з цим пристроєм</string>
+    <string name="install_fail_timeout">Час очікування на встановлення вичерпано</string>
+    <string name="install_success">Програму успішно встановлено!</string>
+    <string name="install_cancelled">Встановлення скасовано</string>
+    <!--            -->
+</resources>

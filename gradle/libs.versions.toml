@@ -33,7 +33,6 @@ compose-webview-multiplatform = "1.9.40"
 highlights = "1.0.0"
 koin = "4.1.0-Beta11"
 ktor = "3.1.3"
-moko-resources = "0.24.5"
 multiplatform-paging = "3.3.0-alpha02-0.5.1"
 multiplatform-settings = "1.3.0"
 voyager = "1.1.0-beta03"
@@ -101,7 +100,6 @@ aboutlibraries-core = { group = "com.mikepenz", name = "aboutlibraries-core", ve
 compose-pdf = { group = "dev.zt64", name = "compose-pdf", version.ref = "compose-pdf" }
 compose-webview-multiplatform = { group = "io.github.kevinnzou", name = "compose-webview-multiplatform", version.ref = "compose-webview-multiplatform" }
 highlights = { group = "dev.snipme", name = "highlights", version.ref = "highlights" }
-moko-resources-compose = { group = "dev.icerock.moko", name = "resources-compose", version.ref = "moko-resources" }
 multiplatform-settings = { group = "com.russhwolf", name = "multiplatform-settings-no-arg", version.ref = "multiplatform-settings" }
 zoomable = { group = "net.engawapg.lib", name = "zoomable", version.ref = "zoomable" }
 
@@ -114,7 +112,6 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 
 # Compose
 compose = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
-moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 
 # Kotlin
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

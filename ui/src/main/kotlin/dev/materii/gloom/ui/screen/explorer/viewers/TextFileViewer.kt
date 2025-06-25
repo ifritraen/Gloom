@@ -1,0 +1,99 @@
+package dev.materii.gloom.ui.screen.explorer.viewers
+
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.foundation.gestures.detectTransformGestures
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.SearchOff
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LargeFloatingActionButton
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import dev.materii.gloom.shared.R
+import dev.materii.gloom.ui.util.DimenUtil.multiply
+import dev.materii.gloom.ui.widget.code.CodeViewer
+
+@Composable
+fun TextFileViewer(
+    content: String,
+    extension: String,
+    linesSelected: IntRange?,
+    onHideToggle: () -> Unit,
+    onSelectLines: (lineNumbers: IntRange?, snippet: String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val lazyListState = rememberLazyListState()
+    val scrollState = rememberScrollState()
+    val layoutDirection = LocalLayoutDirection.current
+    val defaultLineNumberPadding = PaddingValues(horizontal = 8.dp, vertical = 3.dp)
+
+    var scale by remember { mutableFloatStateOf(1f) }
+    var lineNumberPadding by remember { mutableStateOf(defaultLineNumberPadding) }
+    var hideFAB by remember { mutableStateOf(false) }
+
+    Box(
+        modifier = modifier.fillMaxWidth()
+    ) {
+        CodeViewer(
+            code = content,
+            extension = extension,
+            fontSize = 13.sp * scale,
+            codePadding = 16.dp * scale,
+            lineNumberPadding = lineNumberPadding,
+            onDoubleClick = { // Double tap to hide the ui
+                onHideToggle()
+                hideFAB = !hideFAB
+            },
+            onSelectLines = onSelectLines,
+            linesSelected = linesSelected,
+            modifier = Modifier
+                .pointerInput(Unit) {
+                    // Pinch to zoom
+                    detectTransformGestures { _, pan, zoom, _ ->
+                        if (scale * zoom in 0.7f..2f) {
+                            scale *= zoom
+                            lineNumberPadding = lineNumberPadding.multiply(zoom, layoutDirection)
+                        }
+                        scrollState.dispatchRawDelta(-(pan.x.toDp().toPx()))
+                        lazyListState.dispatchRawDelta(-(pan.y.toDp().toPx()))
+                    }
+                },
+        )
+
+        AnimatedVisibility(
+            visible = scale != 1f && !hideFAB,
+            enter = scaleIn(),
+            exit = scaleOut(),
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .systemBarsPadding()
+                .padding(16.dp)
+        ) {
+            LargeFloatingActionButton(
+                shape = RoundedCornerShape(25),
+                onClick = {
+                    scale = 1f
+                    lineNumberPadding = defaultLineNumberPadding
+                },
+                modifier = Modifier
+                    .size(56.dp)
+            ) {
+                Icon(
+                    Icons.Outlined.SearchOff,
+                    contentDescription = stringResource(R.string.action_reset_zoom)
+                )
+            }
+        }
+    }
+}

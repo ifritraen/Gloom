@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_star">星標</string>
+    <string name="action_unstar">取消星標</string>
+    <string name="placeholder_empty_repo">空儲存庫</string>
+    <string name="cd_forked_repo">派生的儲存庫</string>
+    <string name="label_repo_archived">由擁有者存檔</string>
+    <!-- Details -->
+    <string name="repo_tab_details">詳情</string>
+    <string name="action_show_license_details">顯示許可證詳情</string>
+    <string name="action_hide_license_details">隱藏許可證詳情</string>
+    <string name="title_license">許可證</string>
+    <string name="label_permissions">權限</string>
+    <string name="label_limitations">限制</string>
+    <string name="label_conditions">條件</string>
+    <string name="label_forked_from">派生自 %s</string>
+    <!--         -->
+    <!-- Code -->
+    <string name="repo_tab_code">程式碼</string>
+    <string name="commits">Commits</string>
+    <!--      -->
+    <!-- Commits -->
+    <string name="label_verified">Verified</string>
+    <string name="label_verified_on">Verified on %1$s</string>
+    <string name="label_gpg_key_id">GPG Key ID: %1$s</string>
+    <string name="label_ssh_fingerprint">SSH Fingerprint: %1$s</string>
+    <string name="commit_authored_by_committer">§author§%1$s§ authored</string>
+    <string name="commit_authored_by_different">§author§%1$s§ authored and §committer§%2$s§ committed</string>
+    <string name="title_commit_verified">This Commit is Verified</string>
+    <string name="commit_signature_reason_github">This commit was created on GitHub.com and signed with GitHub\'s verified signature.
+    </string>
+    <string name="commit_signature_reason_user">This commit was signed with the committer\'s verified signature.</string>
+    <!--         -->
+    <!-- Issues -->
+    <string name="repo_tab_issues">問題</string>
+    <string name="cd_issue_title_opened">問題編號 %1$d，標題為 \"%2$s\"</string>
+    <string name="cd_issue_title_completed">問題編號 %1$d，標題為 \"%2$s\"，已標註為已完成</string>
+    <string name="cd_issue_title_not_planned">問題編號 %1$d，標題為 \"%2$s\"，已標註為未計劃處理</string>
+    <!--        -->
+    <!-- Pull Requests -->
+    <string name="repo_tab_prs">拉取請求</string>
+    <string name="cd_pr_title_opened">已開啟拉取請求編號 %1$d，標題為 \"%2$s\"</string>
+    <string name="cd_pr_title_merged">已合併拉取請求編號 %1$d，標題為 \"%2$s\"</string>
+    <string name="cd_pr_title_closed">已關閉拉取請求編號 %1$d，標題為 \"%2$s\"</string>
+    <string name="cd_pr_title_draft">草稿拉取請求編號 %1$d，標題為 \"%2$s\"</string>
+    <string name="label_checks_failed">檢查失敗</string>
+    <!--               -->
+    <!-- Issue or PR -->
+    <string name="cd_label_comments">%1$d 條評論</string>
+    <string name="msg_issue_or_pr_author">#%1$d 由 %2$s 提交</string>
+    <!--             -->
+    <!-- Releases -->
+    <string name="repo_tab_releases">發行版本</string>
+    <string name="label_all_releases">所有發行版本</string>
+    <!--          -->
+</resources>

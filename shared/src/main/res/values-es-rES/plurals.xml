@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="noun_contributors">
+        <item quantity="one">%s contribuidor</item>
+        <item quantity="other">%s contribuidores</item>
+    </plurals>
+    <plurals name="repositories">
+        <item quantity="one">%s repositorio</item>
+        <item quantity="other">%s repositorios</item>
+    </plurals>
+    <plurals name="stars">
+        <item quantity="one">%s estrella</item>
+        <item quantity="other">%s estrellas</item>
+    </plurals>
+    <plurals name="forks">
+        <item quantity="one">%s bifurcación</item>
+        <item quantity="other">%s bifurcaciones</item>
+    </plurals>
+    <plurals name="followers">
+        <item quantity="one">%s Follower</item>
+        <item quantity="other">%s Followers</item>
+    </plurals>
+    <plurals name="following">
+        <item quantity="one">%s Following</item>
+        <item quantity="other">%s Following</item>
+    </plurals>
+    <plurals name="contributions_toast">
+        <item quantity="one">%1$s: %2$d contribución</item>
+        <item quantity="other">%1$s: %2$d contribuciones</item>
+    </plurals>
+    <plurals name="plural_language">
+        <item quantity="one">Idioma</item>
+        <item quantity="other">Idiomas</item>
+    </plurals>
+    <plurals name="plural_lines_selected">
+        <item quantity="one">Línea %1$s</item>
+        <item quantity="other">Líneas %1$s-%2$s</item>
+    </plurals>
+    <plurals name="plural_pr_merge_details">
+        <item quantity="one">%1$s merged %2$d commit into %3$s</item>
+        <item quantity="other">%1$s merged %2$d commits into %3$s</item>
+    </plurals>
+</resources>

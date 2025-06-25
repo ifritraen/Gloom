@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="noun_contributors">
+        <item quantity="one">%s Учасник</item>
+        <item quantity="few">%s Учасники</item>
+        <item quantity="many">%s Учасників</item>
+        <item quantity="other">%s Учасники</item>
+    </plurals>
+    <plurals name="repositories">
+        <item quantity="one">%s Репозиторій</item>
+        <item quantity="few">%s Репозиторії</item>
+        <item quantity="many">%s Репозиторіїв</item>
+        <item quantity="other">%s Репозиторії</item>
+    </plurals>
+    <plurals name="stars">
+        <item quantity="one">%s Зірка</item>
+        <item quantity="few">%s Зірки</item>
+        <item quantity="many">%s Зірок</item>
+        <item quantity="other">%s Зірок</item>
+    </plurals>
+    <plurals name="forks">
+        <item quantity="one">%s Форк</item>
+        <item quantity="few">%s Форки</item>
+        <item quantity="many">%s Форків</item>
+        <item quantity="other">%s Форків</item>
+    </plurals>
+    <plurals name="followers">
+        <item quantity="one">%s Підписник</item>
+        <item quantity="few">%s Підписники</item>
+        <item quantity="many">%s Підписників</item>
+        <item quantity="other">%s Підписників</item>
+    </plurals>
+    <plurals name="following">
+        <item quantity="one">%s Підписка</item>
+        <item quantity="few">%s Підписки</item>
+        <item quantity="many">%s Підписок</item>
+        <item quantity="other">%s Підписок</item>
+    </plurals>
+    <plurals name="contributions_toast">
+        <item quantity="one">%1$s: %2$d Внесок</item>
+        <item quantity="few">%1$s: %2$d внески</item>
+        <item quantity="many">%1$s: %2$d Внесків</item>
+        <item quantity="other">%1$s: %2$d Внесків</item>
+    </plurals>
+    <plurals name="plural_language">
+        <item quantity="one">Мова</item>
+        <item quantity="few">Мови</item>
+        <item quantity="many">Мов</item>
+        <item quantity="other">Мов</item>
+    </plurals>
+    <plurals name="plural_lines_selected">
+        <item quantity="one">Рядок %1$s</item>
+        <item quantity="few">Рядки %1$s-%2$s</item>
+        <item quantity="many">Рядки %1$s-%2$s</item>
+        <item quantity="other">Рядки %1$s-%2$s</item>
+    </plurals>
+    <plurals name="plural_pr_merge_details">
+        <item quantity="one">%1$s об\'єднав %2$d коміт у %3$s</item>
+        <item quantity="few">%1$s об\'єднав %2$d коміти у %3$s</item>
+        <item quantity="many">%1$s об\'єднав %2$d комітів у %3$s</item>
+        <item quantity="other">%1$s об\'єднав %2$d коміти у %3$s</item>
+    </plurals>
+</resources>

@@ -1,0 +1,81 @@
+package dev.materii.gloom.ui.screen.release.dialog
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Download
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import dev.materii.gloom.shared.R
+import dev.materii.gloom.ui.util.getFileSizeString
+
+@Composable
+fun ReleaseAssetDownloadDialog(
+    fileName: String,
+    fileSize: Int,
+    onClose: () -> Unit,
+    onConfirm: (dontShowAgain: Boolean) -> Unit
+) {
+    var checked by remember {
+        mutableStateOf(false)
+    }
+
+    AlertDialog(
+        onDismissRequest = onClose,
+        confirmButton = {
+            FilledTonalButton(onClick = { onConfirm(checked) }) {
+                Text(stringResource(R.string.action_download))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onClose) {
+                Text(stringResource(R.string.dismiss_cancel))
+            }
+        },
+        icon = {
+            Icon(
+                imageVector = Icons.Rounded.Download,
+                contentDescription = null,
+                modifier = Modifier.size(30.dp)
+            )
+        },
+        title = {
+            Text(
+                text = stringResource(R.string.title_download_confirm),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+        },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                Text(
+                    text = stringResource(
+                        R.string.msg_download_dialog_body,
+                        fileName,
+                        getFileSizeString(fileSize)
+                    ),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .clickable(role = Role.Checkbox) { checked = !checked }
+                        .fillMaxWidth()
+                ) {
+                    Checkbox(checked = checked, onCheckedChange = { checked = it })
+                    Text(stringResource(R.string.label_dont_show_again))
+                }
+            }
+        }
+    )
+}

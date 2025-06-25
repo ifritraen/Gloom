@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="action_star">В обране</string>
+    <string name="action_unstar">З обраного</string>
+    <string name="placeholder_empty_repo">Порожній репозиторій</string>
+    <string name="cd_forked_repo">Форк репозиторію</string>
+    <string name="label_repo_archived">Заархівовано власником</string>
+    <!-- Details -->
+    <string name="repo_tab_details">Деталі</string>
+    <string name="action_show_license_details">Показати деталі ліцензії</string>
+    <string name="action_hide_license_details">Сховати деталі ліцензії</string>
+    <string name="title_license">Ліцензія</string>
+    <string name="label_permissions">Дозволи</string>
+    <string name="label_limitations">Обмеження</string>
+    <string name="label_conditions">Умови</string>
+    <string name="label_forked_from">Форк з %s</string>
+    <!--         -->
+    <!-- Code -->
+    <string name="repo_tab_code">Код</string>
+    <string name="commits">Коміти</string>
+    <!--      -->
+    <!-- Commits -->
+    <string name="label_verified">Підтверджено</string>
+    <string name="label_verified_on">Підтверджено на %1$s</string>
+    <string name="label_gpg_key_id">ID ключа GPG: %1$s</string>
+    <string name="label_ssh_fingerprint">Відбиток SSH: %1$s</string>
+    <string name="commit_authored_by_committer">§author§%1$s§ є автором</string>
+    <string name="commit_authored_by_different">§author§%1$s§ створив, а §committer§%2$s§ додав</string>
+    <string name="title_commit_verified">Цей коміт підтверджено</string>
+    <string name="commit_signature_reason_github">Цей коміт створено на GitHub.com і підписано перевіреним підписом GitHub
+    </string>
+    <string name="commit_signature_reason_user">Цей коміт підписано перевіреним підписом виконавця.</string>
+    <!--         -->
+    <!-- Issues -->
+    <string name="repo_tab_issues">Проблеми</string>
+    <string name="cd_issue_title_opened">Номер проблеми %1$d з заголовком \"%2$s\"</string>
+    <string name="cd_issue_title_completed">Номер проблеми %1$d з заголовком \"%2$s\" позначено як завершена</string>
+    <string name="cd_issue_title_not_planned">Номер проблеми %1$d з заголовком \"%2$s\" позначено як не заплановано</string>
+    <!--        -->
+    <!-- Pull Requests -->
+    <string name="repo_tab_prs">Запити на злиття</string>
+    <string name="cd_pr_title_opened">Відкрити номер запиту на злиття %1$d з заголовком \"%2$s\"</string>
+    <string name="cd_pr_title_merged">Злитий запит на злиття номер %1$d з назвою \"%2$s\"</string>
+    <string name="cd_pr_title_closed">Закритий запит на злиття номер %1$d з заголовком \"%2$s\"</string>
+    <string name="cd_pr_title_draft">Чернетка запиту на зняття номер %1$d із заголовком \"%2$s\"</string>
+    <string name="label_checks_failed">Перевірки не пройшли</string>
+    <!--               -->
+    <!-- Issue or PR -->
+    <string name="cd_label_comments">%1$d коментарів</string>
+    <string name="msg_issue_or_pr_author">#%1$d від %2$s</string>
+    <!--             -->
+    <!-- Releases -->
+    <string name="repo_tab_releases">Випуск</string>
+    <string name="label_all_releases">Усі випуски</string>
+    <!--          -->
+</resources>

@@ -3,10 +3,6 @@ api_token_env: CROWDIN_PERSONAL_TOKEN
 
 preserve_hierarchy: true
 files:
-  - source: shared/src/commonMain/moko-resources/base/*.xml
-    translation: shared/src/commonMain/moko-resources/%locale%/%original_file_name%
+  - source: shared/src/main/res/values/*.xml
+    translation: shared/src/main/res/values-%android_locale%/%original_file_name%
     update_option: update_as_unapproved
-    ignore:
-      - shared/src/commonMain/moko-resources/images/
-      - shared/src/commonMain/moko-resources/files/
-      - shared/src/commonMain/moko-resources/assets/

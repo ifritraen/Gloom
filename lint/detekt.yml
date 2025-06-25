@@ -209,7 +209,7 @@ naming:
     active: true
   ObjectPropertyNaming:
     active: true
-    constantPattern: '[A-Z][A-Za-z0-9]*'
+    constantPattern: '[A-Z][A-Za-z0-9_]*'
   TopLevelPropertyNaming:
     active: true
     constantPattern: '[A-Z][A-Za-z0-9]*'
