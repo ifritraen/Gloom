@@ -1,4 +1,6 @@
 [versions]
+# Android
+android-desugar-libs = "2.1.5"
 
 # AndroidX
 androidx-browser = "1.8.0"
@@ -8,6 +10,7 @@ androidx-lifecycle-runtime-ktx = "2.9.0"
 
 # Compose
 androidx-activity-compose = "1.10.1"
+compose-bom = "2025.06.01"
 compose-multiplatform = "1.8.0"
 
 # KotlinX
@@ -40,6 +43,8 @@ zoomable = "2.0.0"
 
 
 [libraries]
+# Android
+android-desugar-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "android-desugar-libs" }
 
 # AndroidX
 androidx-browser = { group = "androidx.browser", name = "browser", version.ref = "androidx-browser" }
@@ -59,6 +64,7 @@ coil-network-ktor3 = { group = "io.coil-kt.coil3", name = "coil-network-ktor3", 
 
 # Compose
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 
 # Detekt
 detekt-api = { group = "io.gitlab.arturbosch.detekt", name = "detekt-api", version.ref = "detekt" }
@@ -103,6 +109,12 @@ highlights = { group = "dev.snipme", name = "highlights", version.ref = "highlig
 multiplatform-settings = { group = "com.russhwolf", name = "multiplatform-settings-no-arg", version.ref = "multiplatform-settings" }
 zoomable = { group = "net.engawapg.lib", name = "zoomable", version.ref = "zoomable" }
 
+# Build-logic
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+compose-gradle-plugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+
+# Testing
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 
 [plugins]
 
@@ -114,8 +126,8 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 
 # Kotlin
-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
@@ -127,6 +139,13 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 aboutlibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutlibraries"}
 apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }
 buildkonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
+
+# Project plugins
+gloom-application = { id = "gloom.application" }
+gloom-application-compose = { id = "gloom.application.compose" }
+gloom-feature = { id = "gloom.feature" }
+gloom-library = { id = "gloom.library" }
+gloom-library-compose = { id = "gloom.library.compose" }
 
 
 [bundles]

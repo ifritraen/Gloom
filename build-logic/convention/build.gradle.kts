@@ -1,0 +1,57 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    `kotlin-dsl`
+}
+
+group = "dev.materii.gloom.buildlogic"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
+dependencies {
+    compileOnly(libs.android.gradle.plugin)
+    compileOnly(libs.compose.gradle.plugin)
+}
+
+tasks {
+    validatePlugins {
+        enableStricterValidation = true
+        failOnWarning = true
+    }
+}
+
+gradlePlugin {
+    plugins {
+        register("applicationCompose") {
+            id = libs.plugins.gloom.application.compose.get().pluginId
+            implementationClass = "ApplicationComposeConventionPlugin"
+        }
+        register("androidApplication") {
+            id = libs.plugins.gloom.application.asProvider().get().pluginId
+            implementationClass = "ApplicationConventionPlugin"
+        }
+
+        register("composeLibrary") {
+            id = libs.plugins.gloom.library.compose.get().pluginId
+            implementationClass = "ComposeLibraryConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = libs.plugins.gloom.library.asProvider().get().pluginId
+            implementationClass = "LibraryConventionPlugin"
+        }
+
+        register("feature") {
+            id = libs.plugins.gloom.feature.get().pluginId
+            implementationClass = "FeatureConventionPlugin"
+        }
+    }
+}
