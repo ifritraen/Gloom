@@ -1,0 +1,5 @@
+fragment RecommendedRepositoryFeedItem on RepositoryRecommendationFeedItem {
+    repository {
+        ...FeedRepository
+    }
+}

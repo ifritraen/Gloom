@@ -6,7 +6,7 @@ android-desugar-libs = "2.1.5"
 androidx-browser = "1.8.0"
 androidx-core-ktx = "1.16.0"
 androidx-core-splashscreen = "1.0.1"
-androidx-lifecycle-runtime-ktx = "2.9.0"
+androidx-lifecycle-runtime-ktx = "2.9.1"
 
 # Compose
 androidx-activity-compose = "1.10.1"
@@ -20,7 +20,7 @@ kotlinx-datetime = "0.6.2"
 kotlinx-serialization = "1.8.1"
 
 # Plugins
-agp = "8.10.1"
+agp = "8.11.0"
 detekt = "1.23.8"
 kotlin = "2.2.0-RC2"
 
@@ -65,6 +65,7 @@ coil-network-ktor3 = { group = "io.coil-kt.coil3", name = "coil-network-ktor3", 
 # Compose
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 # Detekt
 detekt-api = { group = "io.gitlab.arturbosch.detekt", name = "detekt-api", version.ref = "detekt" }
