@@ -81,7 +81,7 @@ interface GraphQLDataSource {
         owner: String,
         name: String,
         after: String? = null,
-        states: List<PullRequestState> = listOf(PullRequestState.OPEN)
+        states: Set<PullRequestState> = setOf(PullRequestState.OPEN)
     ): GraphQLResponse<RepoPullRequestsQuery.Data>
 
     suspend fun getRepoReleases(
@@ -374,7 +374,7 @@ internal class NetworkGraphQLDataSource(
         owner: String,
         name: String,
         after: String?,
-        states: List<PullRequestState>
+        states: Set<PullRequestState>
     ): GraphQLResponse<RepoPullRequestsQuery.Data> {
         return apolloClient.query(RepoPullRequestsQuery(owner, name, after.toOptional(), states.toList()))
             .addToken()

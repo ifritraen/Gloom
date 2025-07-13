@@ -16,6 +16,7 @@ include(
     ":app",
 
     // Core
+    ":core:data",
     ":core:graphql",
 
     // Tooling
