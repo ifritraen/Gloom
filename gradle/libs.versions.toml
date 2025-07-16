@@ -1,5 +1,6 @@
 [versions]
 # Android
+android-sdk = "35"
 android-desugar-libs = "2.1.5"
 
 # AndroidX
@@ -109,10 +110,6 @@ compose-webview-multiplatform = { group = "io.github.kevinnzou", name = "compose
 highlights = { group = "dev.snipme", name = "highlights", version.ref = "highlights" }
 multiplatform-settings = { group = "com.russhwolf", name = "multiplatform-settings-no-arg", version.ref = "multiplatform-settings" }
 zoomable = { group = "net.engawapg.lib", name = "zoomable", version.ref = "zoomable" }
-
-# Build-logic
-android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
-compose-gradle-plugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 # Testing
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
