@@ -4,6 +4,7 @@ import dev.materii.gloom.core.graphql.FeedQuery
 import dev.materii.gloom.core.graphql.GraphQLDataSource
 import dev.materii.gloom.core.graphql.response.GraphQLResponse
 import dev.materii.gloom.core.graphql.response.transform
+import kotlinx.coroutines.flow.Flow
 
 interface FeedRepository {
 
@@ -12,7 +13,7 @@ interface FeedRepository {
      *
      * @param after The cursor used to retrieve the next page of items
      */
-    suspend fun getFeed(after: String? = null): GraphQLResponse<FeedQuery.Items?>
+    fun getFeed(after: String? = null): Flow<GraphQLResponse<FeedQuery.Items?>>
 
 }
 
@@ -20,7 +21,7 @@ internal class FeedRepositoryImpl(
     private val graphQL: GraphQLDataSource
 ): FeedRepository {
 
-    override suspend fun getFeed(after: String?): GraphQLResponse<FeedQuery.Items?> {
+    override fun getFeed(after: String?): Flow<GraphQLResponse<FeedQuery.Items?>> {
         return graphQL.getFeed(after).transform {
             it.viewer.dashboard?.feed?.items
         }

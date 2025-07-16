@@ -6,6 +6,7 @@ import dev.materii.gloom.core.graphql.fragment.RawMarkdownFile
 import dev.materii.gloom.core.graphql.fragment.TreeFragment
 import dev.materii.gloom.core.graphql.response.GraphQLResponse
 import dev.materii.gloom.core.graphql.response.transform
+import kotlinx.coroutines.flow.Flow
 
 interface FilesRepository {
 
@@ -18,12 +19,12 @@ interface FilesRepository {
      * @param branch Branch to look for the path in
      * @param path Desired path to browse through
      */
-    suspend fun getTree(
+    fun getTree(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<TreeFragment?>
+    ): Flow<GraphQLResponse<TreeFragment?>>
 
     /**
      * Get a file and its contents
@@ -33,12 +34,12 @@ interface FilesRepository {
      * @param branch Branch to look for the path in
      * @param path Path to the desired file
      */
-    suspend fun getFile(
+    fun getFile(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<File?>
+    ): Flow<GraphQLResponse<File?>>
 
     /**
      * Gets the raw, unrendered markdown
@@ -48,12 +49,12 @@ interface FilesRepository {
      * @param branch Branch to look for the path in
      * @param path Path to the markdown file
      */
-    suspend fun getRawMarkdown(
+    fun getRawMarkdown(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<RawMarkdownFile?>
+    ): Flow<GraphQLResponse<RawMarkdownFile?>>
 
 }
 
@@ -61,36 +62,37 @@ internal class FilesRepositoryImpl(
     private val graphQL: GraphQLDataSource
 ): FilesRepository {
 
-    override suspend fun getTree(
+    override fun getTree(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<TreeFragment?> {
+    ): Flow<GraphQLResponse<TreeFragment?>> {
         return graphQL.getTree(owner, name, "$branch:$path").transform {
             it.repository?.gitObject?.treeFragment
         }
     }
 
-    override suspend fun getFile(
+    override fun getFile(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<File?> {
+    ): Flow<GraphQLResponse<File?>> {
         return graphQL.getFile(owner, name, branch, path).transform {
             it.repository?.file
         }
     }
 
-    override suspend fun getRawMarkdown(
+    override fun getRawMarkdown(
         owner: String,
         name: String,
         branch: String,
         path: String
-    ): GraphQLResponse<RawMarkdownFile?> {
+    ): Flow<GraphQLResponse<RawMarkdownFile?>> {
         return graphQL.getRawMarkdown(owner, name, branch, path).transform {
             it.repository?.gitObject?.onCommit?.file?.fileType?.rawMarkdownFile
         }
     }
+
 }

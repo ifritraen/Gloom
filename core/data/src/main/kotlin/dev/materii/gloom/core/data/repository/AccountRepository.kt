@@ -2,9 +2,10 @@ package dev.materii.gloom.core.data.repository
 
 import dev.materii.gloom.core.graphql.GraphQLDataSource
 import dev.materii.gloom.core.graphql.IdentifyQuery
-import dev.materii.gloom.core.graphql.fragment.UserAccount
 import dev.materii.gloom.core.graphql.response.GraphQLResponse
 import dev.materii.gloom.core.graphql.response.transform
+import dev.materii.gloom.core.model.account.UserAccount
+import kotlinx.coroutines.flow.Flow
 
 interface AccountRepository {
 
@@ -13,12 +14,12 @@ interface AccountRepository {
      *
      * @param token The token belonging to the desired account
      */
-    suspend fun getAccountInfo(token: String): GraphQLResponse<UserAccount>
+    fun getAccountInfo(token: String): Flow<GraphQLResponse<UserAccount>>
 
     /**
-     * Used to check if a token has been revoked
+     * Used to check if the active token has been revoked
      */
-    suspend fun identify(): GraphQLResponse<IdentifyQuery.Data>
+    fun identify(): Flow<GraphQLResponse<IdentifyQuery.Data>>
 
 }
 
@@ -26,11 +27,13 @@ internal class AccountRepositoryImpl(
     private val graphQL: GraphQLDataSource
 ): AccountRepository {
 
-    override suspend fun getAccountInfo(token: String): GraphQLResponse<UserAccount> {
-        return graphQL.getAccountInfo(token).transform { it.viewer.userAccount }
+    override fun getAccountInfo(token: String): Flow<GraphQLResponse<UserAccount>> {
+        return graphQL.getAccountInfo(token).transform { (viewer) ->
+            UserAccount.fromFragment(viewer.userAccount)
+        }
     }
 
-    override suspend fun identify(): GraphQLResponse<IdentifyQuery.Data> {
+    override fun identify(): Flow<GraphQLResponse<IdentifyQuery.Data>> {
         return graphQL.identify()
     }
 

@@ -8,7 +8,6 @@ pluginManagement {
 }
 
 rootProject.name = "Gloom"
-include(":app")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 

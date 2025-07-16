@@ -4,6 +4,7 @@ import dev.materii.gloom.core.graphql.GraphQLDataSource
 import dev.materii.gloom.core.graphql.fragment.ReleaseDetails
 import dev.materii.gloom.core.graphql.response.GraphQLResponse
 import dev.materii.gloom.core.graphql.response.transform
+import kotlinx.coroutines.flow.Flow
 
 interface ReleaseRepository {
 
@@ -15,12 +16,12 @@ interface ReleaseRepository {
      * @param tag Tag associated with the release
      * @param after Cursor used to get the next set of assets
      */
-    suspend fun getReleaseDetails(
+    fun getReleaseDetails(
         owner: String,
         name: String,
         tag: String,
         after: String? = null
-    ): GraphQLResponse<ReleaseDetails?>
+    ): Flow<GraphQLResponse<ReleaseDetails?>>
 
 }
 
@@ -28,12 +29,12 @@ internal class ReleaseRepositoryImpl(
     private val graphQL: GraphQLDataSource
 ): ReleaseRepository {
 
-    override suspend fun getReleaseDetails(
+    override fun getReleaseDetails(
         owner: String,
         name: String,
         tag: String,
         after: String?
-    ): GraphQLResponse<ReleaseDetails?> {
+    ): Flow<GraphQLResponse<ReleaseDetails?>> {
         return graphQL.getReleaseDetails(owner, name, tag, after).transform {
             it.repository?.release?.releaseDetails
         }

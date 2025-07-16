@@ -1,5 +1,8 @@
 package dev.materii.gloom.core.graphql.response
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.mapLatest
+
 /**
  * Handle all cases for GraphQL responses
  *
@@ -65,10 +68,12 @@ fun <T> GraphQLResponse<T>.getOrNull(): T? = when (this) {
  * Transform the response data into a more desirable form
  */
 @Suppress("UNCHECKED_CAST")
-fun <T, R> GraphQLResponse<T>.transform(block: (T) -> R): GraphQLResponse<R> {
-    return when (this) {
-        is GraphQLResponse.Success -> GraphQLResponse.Success(block(data), errors)
-        is GraphQLResponse.Error -> this as GraphQLResponse.Error<R>
-        is GraphQLResponse.Failure -> this as GraphQLResponse.Failure<R>
+fun <T, R> Flow<GraphQLResponse<T>>.transform(block: (T) -> R): Flow<GraphQLResponse<R>> {
+    return mapLatest { res ->
+        when (res) {
+            is GraphQLResponse.Success -> GraphQLResponse.Success(block(res.data), res.errors)
+            is GraphQLResponse.Error -> res as GraphQLResponse.Error<R>
+            is GraphQLResponse.Failure -> res as GraphQLResponse.Failure<R>
+        }
     }
 }

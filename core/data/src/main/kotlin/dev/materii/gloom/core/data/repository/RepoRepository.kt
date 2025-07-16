@@ -8,6 +8,7 @@ import dev.materii.gloom.core.graphql.response.GraphQLResponse
 import dev.materii.gloom.core.graphql.response.transform
 import dev.materii.gloom.core.graphql.type.IssueState
 import dev.materii.gloom.core.graphql.type.PullRequestState
+import kotlinx.coroutines.flow.Flow
 
 interface RepoRepository {
 
@@ -17,7 +18,7 @@ interface RepoRepository {
      * @param owner Owner of the repository
      * @param name Name of the repository
      */
-    suspend fun getRepoName(owner: String, name: String): GraphQLResponse<RepoOverview?>
+    fun getRepoName(owner: String, name: String): Flow<GraphQLResponse<RepoOverview?>>
 
     /**
      * Get the details for a particular repository
@@ -25,7 +26,7 @@ interface RepoRepository {
      * @param owner Owner of the repository
      * @param name Name of the repository
      */
-    suspend fun getRepoDetails(owner: String, name: String): GraphQLResponse<RepoDetails?>
+    fun getRepoDetails(owner: String, name: String): Flow<GraphQLResponse<RepoDetails?>>
 
     /**
      * Get license info for a repository
@@ -33,7 +34,7 @@ interface RepoRepository {
      * @param owner Owner of the repository
      * @param name Name of the repository
      */
-    suspend fun getRepoLicense(owner: String, name: String): GraphQLResponse<RepoLicense?>
+    fun getRepoLicense(owner: String, name: String): Flow<GraphQLResponse<RepoLicense?>>
 
     /**
      * Get metadata needed to fetch a repository's file tree
@@ -41,7 +42,7 @@ interface RepoRepository {
      * @param owner Owner of the repository
      * @param name Name of the repository
      */
-    suspend fun prefetchRepoTree(owner: String, name: String): GraphQLResponse<RepoTreePrefetchQuery.Repository?>
+    fun prefetchRepoTree(owner: String, name: String): Flow<GraphQLResponse<RepoTreePrefetchQuery.Repository?>>
 
     /**
      * Get the issues made in a repository
@@ -51,12 +52,12 @@ interface RepoRepository {
      * @param after Cursor used to get the next page of issues
      * @param states States to filter with
      */
-    suspend fun getRepoIssues(
+    fun getRepoIssues(
         owner: String,
         name: String,
         after: String? = null,
         states: Set<IssueState> = setOf(IssueState.OPEN)
-    ): GraphQLResponse<RepoIssuesQuery.Issues?>
+    ): Flow<GraphQLResponse<RepoIssuesQuery.Issues?>>
 
     /**
      * Get the pull requests made to a repository
@@ -66,12 +67,12 @@ interface RepoRepository {
      * @param after Cursor used to get the next page of pull requests
      * @param states States to filter with
      */
-    suspend fun getRepoPullRequests(
+    fun getRepoPullRequests(
         owner: String,
         name: String,
         after: String? = null,
         states: Set<PullRequestState> = setOf(PullRequestState.OPEN)
-    ): GraphQLResponse<RepoPullRequestsQuery.PullRequests?>
+    ): Flow<GraphQLResponse<RepoPullRequestsQuery.PullRequests?>>
 
     /**
      * Get the releases from a repository
@@ -80,11 +81,11 @@ interface RepoRepository {
      * @param name Name of the repository
      * @param after Cursor used to get the next page of releases
      */
-    suspend fun getRepoReleases(
+    fun getRepoReleases(
         owner: String,
         name: String,
         after: String? = null
-    ): GraphQLResponse<RepoReleasesQuery.Releases?>
+    ): Flow<GraphQLResponse<RepoReleasesQuery.Releases?>>
 
     /**
      * Get the forks made from a repository
@@ -93,11 +94,11 @@ interface RepoRepository {
      * @param name Name of the repository
      * @param after Cursor used to get the next page of forks
      */
-    suspend fun getRepoForks(
+    fun getRepoForks(
         owner: String,
         name: String,
         after: String? = null
-    ): GraphQLResponse<RepoForksQuery.Forks?>
+    ): Flow<GraphQLResponse<RepoForksQuery.Forks?>>
 
     /**
      * Get the contributors to a repository
@@ -106,11 +107,11 @@ interface RepoRepository {
      * @param name Name of the repository
      * @param after Cursor used to get the next page of contributors
      */
-    suspend fun getRepoContributors(
+    fun getRepoContributors(
         owner: String,
         name: String,
         after: String? = null
-    ): GraphQLResponse<RepoContributorsQuery.Contributors?>
+    ): Flow<GraphQLResponse<RepoContributorsQuery.Contributors?>>
 
     /**
      * Get the commits to a repository branch
@@ -119,21 +120,21 @@ interface RepoRepository {
      * @param branch Branch to view commits from
      * @param after Cursor used to get the next page of commits
      */
-    suspend fun getCommits(
+    fun getCommits(
         id: String,
         branch: String,
         after: String? = null,
-    ): GraphQLResponse<CommitsQuery.History?>
+    ): Flow<GraphQLResponse<CommitsQuery.History?>>
 
     /**
      * Star a repository
      */
-    suspend fun star(id: String): GraphQLResponse<StarMutation.AddStar?>
+    fun star(id: String): Flow<GraphQLResponse<StarMutation.AddStar?>>
 
     /**
      * Unstar a repository
      */
-    suspend fun unstar(id: String): GraphQLResponse<UnstarMutation.RemoveStar?>
+    fun unstar(id: String): Flow<GraphQLResponse<UnstarMutation.RemoveStar?>>
 
 }
 
@@ -141,111 +142,111 @@ internal class RepoRepositoryImpl(
     private val graphQL: GraphQLDataSource
 ): RepoRepository {
 
-    override suspend fun getRepoName(
+    override fun getRepoName(
         owner: String,
         name: String
-    ): GraphQLResponse<RepoOverview?> {
+    ): Flow<GraphQLResponse<RepoOverview?>> {
         return graphQL.getRepoName(owner, name).transform {
             it.repository?.repoOverview
         }
     }
 
-    override suspend fun getRepoDetails(
+    override fun getRepoDetails(
         owner: String,
         name: String
-    ): GraphQLResponse<RepoDetails?> {
+    ): Flow<GraphQLResponse<RepoDetails?>> {
         return graphQL.getRepoDetails(owner, name).transform {
             it.repository?.repoDetails
         }
     }
 
-    override suspend fun getRepoLicense(
+    override fun getRepoLicense(
         owner: String,
         name: String
-    ): GraphQLResponse<RepoLicense?> {
+    ): Flow<GraphQLResponse<RepoLicense?>> {
         return graphQL.getRepoLicense(owner, name).transform {
             it.repository?.licenseInfo?.repoLicense
         }
     }
 
-    override suspend fun prefetchRepoTree(
+    override fun prefetchRepoTree(
         owner: String,
         name: String
-    ): GraphQLResponse<RepoTreePrefetchQuery.Repository?> {
+    ): Flow<GraphQLResponse<RepoTreePrefetchQuery.Repository?>> {
         return graphQL.prefetchRepoTree(owner, name).transform {
             it.repository
         }
     }
 
-    override suspend fun getRepoIssues(
+    override fun getRepoIssues(
         owner: String,
         name: String,
         after: String?,
         states: Set<IssueState>
-    ): GraphQLResponse<RepoIssuesQuery.Issues?> {
+    ): Flow<GraphQLResponse<RepoIssuesQuery.Issues?>> {
         return graphQL.getRepoIssues(owner, name, after, states).transform {
             it.repository?.issues
         }
     }
 
-    override suspend fun getRepoPullRequests(
+    override fun getRepoPullRequests(
         owner: String,
         name: String,
         after: String?,
         states: Set<PullRequestState>
-    ): GraphQLResponse<RepoPullRequestsQuery.PullRequests?> {
+    ): Flow<GraphQLResponse<RepoPullRequestsQuery.PullRequests?>> {
         return graphQL.getRepoPullRequests(owner, name, after, states).transform {
             it.repository?.pullRequests
         }
     }
 
-    override suspend fun getRepoReleases(
+    override fun getRepoReleases(
         owner: String,
         name: String,
         after: String?
-    ): GraphQLResponse<RepoReleasesQuery.Releases?> {
+    ): Flow<GraphQLResponse<RepoReleasesQuery.Releases?>> {
         return graphQL.getRepoReleases(owner, name, after).transform {
             it.repository?.releases
         }
     }
 
-    override suspend fun getRepoForks(
+    override fun getRepoForks(
         owner: String,
         name: String,
         after: String?
-    ): GraphQLResponse<RepoForksQuery.Forks?> {
+    ): Flow<GraphQLResponse<RepoForksQuery.Forks?>> {
         return graphQL.getRepoForks(owner, name, after).transform {
             it.repository?.forks
         }
     }
 
-    override suspend fun getRepoContributors(
+    override fun getRepoContributors(
         owner: String,
         name: String,
         after: String?
-    ): GraphQLResponse<RepoContributorsQuery.Contributors?> {
+    ): Flow<GraphQLResponse<RepoContributorsQuery.Contributors?>> {
         return graphQL.getRepoContributors(owner, name, after).transform {
             it.repository?.contributors
         }
     }
 
-    override suspend fun getCommits(
+    override fun getCommits(
         id: String,
         branch: String,
         after: String?
-    ): GraphQLResponse<CommitsQuery.History?> {
+    ): Flow<GraphQLResponse<CommitsQuery.History?>> {
         return graphQL.getCommits(id, branch, after).transform {
             it.node?.onRepository?.gitObject?.onCommit?.history
         }
     }
 
-    override suspend fun star(id: String): GraphQLResponse<StarMutation.AddStar?> {
+    override fun star(id: String): Flow<GraphQLResponse<StarMutation.AddStar?>> {
         return graphQL.star(id).transform {
             it.addStar
         }
     }
 
-    override suspend fun unstar(id: String): GraphQLResponse<UnstarMutation.RemoveStar?> {
+    override fun unstar(id: String): Flow<GraphQLResponse<UnstarMutation.RemoveStar?>> {
         return graphQL.unstar(id).transform {
             it.removeStar
         }
