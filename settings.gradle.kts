@@ -17,6 +17,7 @@ include(
     // Core
     ":core:data",
     ":core:graphql",
+    ":core:model",
 
     // Tooling
     ":lint:rules"
