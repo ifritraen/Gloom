@@ -5,8 +5,11 @@
   
   # Gloom
 
-  
   Material You Github client
+  
+  Its the fork of main repo
+  https://github.com/MateriiApps/Gloom
+  I have just built it and released it since the main repo didn't release it. I find it the most efficient GitHub android client app, with enough features, and bugless. Please consider giving star to main repo to motivate them to continue the project.  
   
   ---
   [![Debug build status](https://img.shields.io/github/actions/workflow/status/MateriiApps/Gloom/build.yml?label=Debug%20Build&logo=github&style=for-the-badge&branch=main)](https://nightly.link/MateriiApps/Gloom/workflows/android/main/gloom-debug.zip)
